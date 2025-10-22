@@ -1,0 +1,39 @@
+/* ==========================================
+   PORTFÓLIO PROFISSIONAL - CIENTISTA DE DADOS
+   ARQUIVO PRINCIPAL DE ESTILOS
+   ========================================== */
+
+/*
+ * 1. BASE
+ * - Variáveis, Resets, Estilos Globais
+ */
+@import url("./base/variables.css");
+@import url("./base/reset.css");
+
+/*
+ * 2. LAYOUT
+ * - Grid, Seções, Header, Footer
+ */
+@import url("./layout/grid.css");
+@import url("./layout/sections.css");
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+
+/*
+ * 3. COMPONENTS
+ * - Estilos de componentes reutilizáveis
+ */
+@import url("./components/preloader.css");
+@import url("./components/buttons.css");
+@import url("./components/mobile-menu.css");
+@import url("./components/hero.css");
+@import url("./components/about.css");
+@import url("./components/skills.css");
+@import url("./components/projects.css");
+@import url("./components/contact.css");
+
+/*
+ * 4. UTILITIES
+ * - Classes utilitárias, animações, etc.
+ */
+@import url("./utils.css");

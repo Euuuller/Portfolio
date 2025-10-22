@@ -1,0 +1,38 @@
+/* ==========================================
+   SEÇÕES GERAIS
+   ========================================== */
+
+.section {
+    padding: var(--space-20) 0;
+    background-color: var(--bg-primary);
+}
+
+.section--alt {
+    background-color: var(--bg-secondary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: var(--text-4xl);
+    }
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-tertiary);
+    max-width: 600px;
+    margin: 0 auto;
+}
