@@ -30,17 +30,20 @@
          ======================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- ========================================
+         DEVICON - ÍCONES PARA HABILIDADES
+         ======================================== -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></noscript>
     
     <!-- ========================================
          ESTILOS CUSTOMIZADOS
          ======================================== -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    
-    <!-- ========================================
-         DEVICON - ÍCONES PARA HABILIDADES
-         ======================================== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 
 <body>
@@ -377,7 +380,7 @@
                     <div class="projects__grid">
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-1.svg" alt="Análise de Vendas" class="project-card__img">
+                                <img src="./assets/images/projects/project-1.svg" alt="Análise de Vendas" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Análise de Vendas</h3>
@@ -397,7 +400,7 @@
                         
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-2.svg" alt="Modelo de Churn" class="project-card__img">
+                                <img src="./assets/images/projects/project-2.svg" alt="Modelo de Churn" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Modelo de Churn</h3>
@@ -417,7 +420,7 @@
                         
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-3.svg" alt="Segmentação de Clientes" class="project-card__img">
+                                <img src="./assets/images/projects/project-3.svg" alt="Segmentação de Clientes" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Segmentação de Clientes</h3>
@@ -437,7 +440,7 @@
                         
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-4.svg" alt="Análise de Sentimentos" class="project-card__img">
+                                <img src="./assets/images/projects/project-4.svg" alt="Análise de Sentimentos" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Análise de Sentimentos</h3>
@@ -457,7 +460,7 @@
                         
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-5.svg" alt="Previsão de Preços" class="project-card__img">
+                                <img src="./assets/images/projects/project-5.svg" alt="Previsão de Preços" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Previsão de Preços</h3>
@@ -477,7 +480,7 @@
                         
                         <article class="project-card">
                             <div class="project-card__image">
-                                <img src="./assets/images/projects/project-6.svg" alt="Dashboard Executivo" class="project-card__img">
+                                <img src="./assets/images/projects/project-6.svg" alt="Dashboard Executivo" class="project-card__img" loading="lazy">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Dashboard Executivo</h3>
@@ -637,7 +640,6 @@
     <!-- ========================================
          JAVASCRIPT
          ======================================== -->
-    <script src="./assets/js/components/portfolio-anim.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>

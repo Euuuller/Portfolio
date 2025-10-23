@@ -1,12 +1,14 @@
 /**
  * ==========================================
- * MÓDULO DE ANIMAÇÕES DE SCROLL
+ * MÓDULO DE ANIMAÇÕES DE SCROLL - OTIMIZADO
  * ==========================================
  */
 
 import { APP_CONFIG } from '../config.js';
 
 const ANIMATED_ELEMENTS_SELECTOR = '.fade-in, .fade-in-left, .fade-in-right';
+let ticking = false;
+let animatedElements = [];
 
 function isElementInViewport(element) {
     try {
@@ -32,24 +34,38 @@ function addAnimationClasses() {
 
         document.querySelectorAll('.skill-card, .project-card').forEach((el, index) => {
             el.classList.add('fade-in');
-            el.style.transitionDelay = `${index * 0.08}s`;
+            el.style.transitionDelay = `${index * 0.05}s`; // Reduzido de 0.08s para 0.05s
         });
+        
+        // Cache dos elementos animados
+        animatedElements = Array.from(document.querySelectorAll(ANIMATED_ELEMENTS_SELECTOR));
     } catch (error) {
         console.error('Erro ao adicionar classes de animação:', error);
     }
 }
 
-export function checkVisibleElements() {
+function updateVisibleElements() {
     try {
-        const animatedElements = document.querySelectorAll(ANIMATED_ELEMENTS_SELECTOR);
-        
         animatedElements.forEach(element => {
-            if (isElementInViewport(element)) {
+            if (!element.classList.contains('visible') && isElementInViewport(element)) {
                 element.classList.add('visible');
             }
         });
+        
+        // Remove elementos já visíveis do array para otimizar futuras verificações
+        animatedElements = animatedElements.filter(el => !el.classList.contains('visible'));
+        
+        ticking = false;
     } catch (error) {
         console.error('Erro ao verificar elementos visíveis:', error);
+        ticking = false;
+    }
+}
+
+export function checkVisibleElements() {
+    if (!ticking) {
+        requestAnimationFrame(updateVisibleElements);
+        ticking = true;
     }
 }
 

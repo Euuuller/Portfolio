@@ -1,0 +1,107 @@
+/**
+ * ==========================================
+ * ESTILOS PARA OTIMIZAÇÃO DE IMAGENS
+ * ==========================================
+ */
+
+/* Estilos base para imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Imagens com lazy loading */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--color-gray-100);
+    min-height: 200px;
+    background-image: 
+        linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%),
+        linear-gradient(var(--color-gray-100), var(--color-gray-100));
+    background-size: 200% 100%, 100% 100%;
+    background-position: -200% 0, 0 0;
+    background-repeat: no-repeat;
+    animation: loading-shimmer 1.5s infinite;
+}
+
+/* Imagem carregada */
+img.loaded {
+    opacity: 1;
+    background: none;
+    animation: none;
+}
+
+/* Imagem do cache */
+img.cached {
+    opacity: 1;
+    transition: none;
+}
+
+/* Imagem com erro */
+img.error {
+    opacity: 0.5;
+    background: var(--color-gray-200);
+    position: relative;
+}
+
+img.error::after {
+    content: '⚠️ Imagem não disponível';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Animação de carregamento */
+@keyframes loading-shimmer {
+    0% {
+        background-position: -200% 0, 0 0;
+    }
+    100% {
+        background-position: 200% 0, 0 0;
+    }
+}
+
+/* Otimizações para performance */
+img {
+    contain: layout style paint;
+    will-change: auto;
+}
+
+img[loading="lazy"] {
+    will-change: opacity;
+}
+
+/* Responsividade para imagens */
+@media (max-width: 768px) {
+    img[loading="lazy"] {
+        min-height: 150px;
+    }
+}
+
+/* Reduzir animações para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+    img[loading="lazy"] {
+        animation: none;
+        transition: none;
+    }
+    
+    img.loaded {
+        transition: none;
+    }
+}
+
+/* Otimização para impressão */
+@media print {
+    img[loading="lazy"] {
+        opacity: 1;
+        background: none;
+        animation: none;
+    }
+}

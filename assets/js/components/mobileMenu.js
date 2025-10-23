@@ -1,6 +1,6 @@
 /**
  * ==========================================
- * MÓDULO DE MENU MOBILE
+ * MÓDULO DE MENU MOBILE - OTIMIZADO
  * ==========================================
  */
 
@@ -38,39 +38,59 @@ function closeMobileMenu() {
     }
 }
 
+/**
+ * Event delegation handler para cliques no menu mobile
+ */
+function handleMobileMenuClick(event) {
+    const target = event.target;
+    
+    // Toggle do menu
+    if (target.matches(SELECTORS.toggle) || target.closest(SELECTORS.toggle)) {
+        event.preventDefault();
+        openMobileMenu();
+        return;
+    }
+    
+    // Fechar menu
+    if (target.matches(SELECTORS.close) || 
+        target.matches(SELECTORS.overlay) ||
+        target.matches(SELECTORS.links)) {
+        event.preventDefault();
+        closeMobileMenu();
+        return;
+    }
+}
+
 export function initMobileMenu() {
     try {
         mobileMenuToggle = document.querySelector(SELECTORS.toggle);
         mobileMenu = document.querySelector(SELECTORS.menu);
-        const mobileMenuClose = document.querySelector(SELECTORS.close);
-        const mobileMenuOverlay = document.querySelector(SELECTORS.overlay);
-        const mobileMenuLinks = document.querySelectorAll(SELECTORS.links);
 
         if (!mobileMenuToggle || !mobileMenu) {
             console.warn('Elementos do menu mobile não encontrados');
             return;
         }
 
-        mobileMenuToggle.addEventListener('click', openMobileMenu);
-        mobileMenuClose?.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+        // Event delegation para todos os cliques relacionados ao menu mobile
+        document.addEventListener('click', handleMobileMenuClick);
 
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
                 closeMobileMenu();
             }
         });
 
-        // Adiciona listener para fechar o menu em telas maiores
+        // Resize handler com throttle implícito
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 992 && mobileMenu?.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (window.innerWidth >= 992 && mobileMenu?.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            }, 100);
+        }, { passive: true });
 
     } catch (error) {
         console.error('Erro na inicialização do menu mobile:', error);
