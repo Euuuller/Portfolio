@@ -46,9 +46,7 @@
     color: var(--primary-color);
 }
 
-.header__logo-secondary {
-    color: var(--text-primary);
-}
+
 
 /* Navegação Desktop */
 .header__nav {

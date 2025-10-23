@@ -47,9 +47,7 @@
     color: var(--primary-color);
 }
 
-.footer__logo-secondary {
-    color: var(--text-primary);
-}
+
 
 .footer__description {
     font-size: var(--text-sm);
