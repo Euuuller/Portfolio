@@ -3,88 +3,198 @@
    ========================================== */
 
 .projects__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    margin-bottom: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
 }
 
 @media (min-width: 768px) {
-    .projects__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 992px) {
-    .projects__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .project-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all var(--transition-normal);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
 }
 
 .project-card__image {
-    position: relative;
-    overflow: hidden;
-    height: 200px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: var(--bg-secondary);
 }
 
 .project-card__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
 }
 
-.project-card:hover .project-card__img {
-    transform: scale(1.05);
+/* Estilos para canvas de animação */
+.project-card__image canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform var(--transition-slow);
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--bg-card) 100%
+  );
+  border-radius: 0;
+}
+
+.project-card:hover .project-card__img,
+.project-card:hover .project-card__image canvas {
+  transform: scale(1.05);
+}
+
+/* Otimizações específicas para animações canvas */
+.project-card__image canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .project-card__content {
-    padding: var(--space-6);
+  padding: var(--space-6);
 }
 
 .project-card__title {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
 }
 
 .project-card__description {
-    font-size: var(--text-base);
-    color: var(--text-tertiary);
-    margin-bottom: var(--space-4);
-    line-height: 1.6;
+  font-size: var(--text-base);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
 }
 
 .project-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .project-card__link:hover {
-    color: var(--primary-hover);
+  color: var(--primary-hover);
 }
 
 .projects__cta {
-    text-align: center;
+  text-align: center;
+}
+
+/* Otimizações para performance das animações */
+.project-card__image {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.project-card__image canvas {
+  will-change: transform;
+  contain: strict;
+  transform: translateZ(0);
+}
+
+/* Estados de carregamento para canvas */
+.project-card__image.loading canvas {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card__image.loaded canvas {
+  opacity: 1;
+}
+
+/* Melhorias visuais para os cards */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 767px) {
+  .project-card__image {
+    height: 180px;
+  }
+
+  .project-card__image canvas {
+    image-rendering: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card__image {
+    height: 160px;
+  }
+}
+
+/* Redução de movimento para usuários com preferência */
+@media (prefers-reduced-motion: reduce) {
+  .project-card__image canvas {
+    animation: none !important;
+  }
+
+  .project-card:hover .project-card__image canvas {
+    transform: none !important;
+  }
+}
+
+/* Melhorias para temas escuros */
+@media (prefers-color-scheme: dark) {
+  .project-card__image canvas {
+    filter: brightness(0.9) contrast(1.1);
+  }
 }
