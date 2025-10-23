@@ -7,7 +7,7 @@ Controla abas com acessibilidade e teclado
 ==========================================
 */
 
-const SKILLS_FILE_PATH = '/assets/data/skills.json'
+const SKILLS_FILE_PATH = './assets/data/skills.json'
 
 export function createSkillCard(skill) {
     const safeName = skill?.name ?? '—'
