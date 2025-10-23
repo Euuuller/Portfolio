@@ -7,6 +7,8 @@
     --primary-color: #3b82f6;
     --primary-hover: #2563eb;
     --accent-color: #0ea5e9;
+    --color-primary: #3b82f6;
+    --color-secondary: #0ea5e9;
     
     /* Cores de Texto - Tema Claro */
     --text-primary: #000000;
@@ -14,6 +16,8 @@
     --text-tertiary: #666666;
     --text-muted: #999999;
     --text-inverse: #ffffff;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
 
     /* Cores de Fundo - Tema Claro (ALL WHITE) */
     --bg-primary: #ffffff;
@@ -21,11 +25,14 @@
     --bg-tertiary: #ffffff;
     --bg-card: #ffffff;
     --bg-overlay: rgba(0, 0, 0, 0.1);
+    --color-bg-secondary: #ffffff;
+    --color-card-bg: #ffffff;
 
     /* Cores de Borda - Tema Claro */
     --border-light: #e0e0e0;
     --border-medium: #cccccc;
     --border-dark: #999999;
+    --color-border: #e0e0e0;
 
     /* Sombras - Tema Claro */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -95,6 +102,8 @@
     --text-tertiary: #999999;
     --text-muted: #666666;
     --text-inverse: #000000;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #cccccc;
 
     /* Cores de Fundo - Tema Escuro (ALL BLACK) */
     --bg-primary: #000000;
@@ -102,11 +111,14 @@
     --bg-tertiary: #000000;
     --bg-card: #000000;
     --bg-overlay: rgba(255, 255, 255, 0.1);
+    --color-bg-secondary: #000000;
+    --color-card-bg: #000000;
 
     /* Cores de Borda - Tema Escuro */
     --border-light: #333333;
     --border-medium: #555555;
     --border-dark: #777777;
+    --color-border: #333333;
 
     /* Sombras - Tema Escuro */
     --shadow-sm: 0 1px 3px rgba(255, 255, 255, 0.1);

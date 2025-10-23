@@ -6,7 +6,7 @@
          ======================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio profissional de Cientista de Dados - Template moderno e responsivo desenvolvido com HTML5, CSS3 e JavaScript puro">
+    <meta name="description" content="Portfóólio profissional de Cientista de Dados - Template moderno e responsivo desenvolvido com HTML5, CSS3 e JavaScript puro">
     <meta name="keywords" content="Cientista de Dados, Data Scientist, Portfólio, Projetos, Machine Learning, Análise de Dados, Python, SQL, Template">
     <meta name="author" content="Template Profissional">
     <meta name="robots" content="index, follow">
@@ -36,6 +36,11 @@
          ESTILOS CUSTOMIZADOS
          ======================================== -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- ========================================
+         DEVICON - ÍCONES PARA HABILIDADES
+         ======================================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 
 <body>
@@ -310,69 +315,50 @@
                         <p class="section-subtitle">Ferramentas e tecnologias que domino</p>
                     </div>
                     
-                    <div class="skills__grid">
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/python.svg" alt="Python" class="skill-card__image">
+                    <!-- Tabs Navigation -->
+                    <div class="skills__tabs" role="tablist">
+                        <button class="skills__tab" data-tab="languages" role="tab">
+                            Linguagens & BDs
+                        </button>
+                        <button class="skills__tab" data-tab="visualization" role="tab">
+                            Visualização
+                        </button>
+                        <button class="skills__tab" data-tab="ml-stats" role="tab">
+                            ML & Estatística
+                        </button>
+                        <button class="skills__tab" data-tab="software-engineering" role="tab">
+                            Engenharia de Software
+                        </button>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div class="skills__content">
+                        <!-- Linguagens & BDs Panel -->
+                        <div class="skills__panel" data-panel="languages" role="tabpanel">
+                            <div class="skills__grid">
+                                <!-- Skills will be loaded dynamically -->
                             </div>
-                            <h3 class="skill-card__title">Python</h3>
-                            <p class="skill-card__description">Pandas, NumPy, Scikit-learn</p>
                         </div>
                         
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/r.svg" alt="R" class="skill-card__image">
+                        <!-- Visualização Panel -->
+                        <div class="skills__panel" data-panel="visualization" role="tabpanel">
+                            <div class="skills__grid">
+                                <!-- Skills will be loaded dynamically -->
                             </div>
-                            <h3 class="skill-card__title">R</h3>
-                            <p class="skill-card__description">Análise estatística avançada</p>
                         </div>
                         
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/sql.svg" alt="SQL" class="skill-card__image">
+                        <!-- ML & Estatística Panel -->
+                        <div class="skills__panel" data-panel="ml-stats" role="tabpanel">
+                            <div class="skills__grid">
+                                <!-- Skills will be loaded dynamically -->
                             </div>
-                            <h3 class="skill-card__title">SQL</h3>
-                            <p class="skill-card__description">Consultas complexas e otimização</p>
                         </div>
                         
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/power-bi.svg" alt="Power BI" class="skill-card__image">
+                        <!-- Engenharia de Software Panel -->
+                        <div class="skills__panel" data-panel="software-engineering" role="tabpanel">
+                            <div class="skills__grid">
+                                <!-- Skills will be loaded dynamically -->
                             </div>
-                            <h3 class="skill-card__title">Power BI</h3>
-                            <p class="skill-card__description">Dashboards e relatórios</p>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/excel.svg" alt="Excel" class="skill-card__image">
-                            </div>
-                            <h3 class="skill-card__title">Excel</h3>
-                            <p class="skill-card__description">Análise e modelagem avançada</p>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/tableau.svg" alt="Tableau" class="skill-card__image">
-                            </div>
-                            <h3 class="skill-card__title">Tableau</h3>
-                            <p class="skill-card__description">Visualização de dados</p>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/git.svg" alt="Git" class="skill-card__image">
-                            </div>
-                            <h3 class="skill-card__title">Git</h3>
-                            <p class="skill-card__description">Controle de versão</p>
-                        </div>
-                        
-                        <div class="skill-card">
-                            <div class="skill-card__icon">
-                                <img src="./assets/images/skills/docker.svg" alt="Docker" class="skill-card__image">
-                            </div>
-                            <h3 class="skill-card__title">Docker</h3>
-                            <p class="skill-card__description">Containerização</p>
                         </div>
                     </div>
                 </div>
