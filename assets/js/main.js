@@ -15,7 +15,6 @@ import { initScrollAnimations, checkVisibleElements } from './components/scrollA
 import { initContactForm } from './components/contactForm.js';
 import { initPreloader } from './components/preloader.js';
 import { initScrollToTop } from './components/scrollToTop.js';
-
 /**
  * Classe principal da aplicação para organizar a inicialização.
  */
@@ -54,7 +53,6 @@ class App {
             initContactForm();
             initScrollToTop();
 
-            // Vincula eventos globais
             this.bindGlobalEvents();
 
             this.isInitialized = true;

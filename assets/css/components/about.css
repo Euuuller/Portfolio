@@ -37,8 +37,10 @@
 .about__paragraph {
     font-size: var(--text-base);
     color: var(--text-tertiary);
-    line-height: 1.7;
+    line-height: 2;
     margin-bottom: var(--space-6);
+    text-align: justify;
+    text-indent: 1.5cm;
 }
 
 .about__paragraph:last-child {
