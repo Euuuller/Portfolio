@@ -61,7 +61,8 @@
     font-size: var(--text-2xl);
     font-weight: 600;
     color: var(--text-secondary);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-0);
+    min-height: 80px;
 }
 
 @media (min-width: 768px) {
@@ -77,9 +78,11 @@
 .hero__description {
     font-size: var(--text-base);
     color: var(--text-tertiary);
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto var(--space-8);
+    line-height: 2;
+    max-width: 700px;
+    margin: 0 auto var(--space-0);
+    text-align: justify;
+    text-indent: 1.5cm;
 }
 
 @media (min-width: 992px) {

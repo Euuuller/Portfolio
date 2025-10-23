@@ -4,7 +4,7 @@
 export const APP_CONFIG = {
     // Configurações do efeito de digitação
     typing: {
-        strings: ['Dados', 'Machine Learning', 'Analytics', 'Business Intelligence', 'Deep Learning'],
+        strings: ["Cientista de Dados", "Data Scientist", "Graduando em Engenharia Elétrica"],
         typeSpeed: 100,
         backSpeed: 50,
         backDelay: 2000,
