@@ -52,7 +52,7 @@
 .footer__description {
     font-size: var(--text-sm);
     color: var(--text-tertiary);
-    max-width: 280px;
+    max-width: 200px;
 }
 
 .footer__nav {
