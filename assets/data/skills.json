@@ -60,25 +60,25 @@
       "name": "Plotly",
       "description": "Gráficos interativos e dashboards dinâmicos para web.",
       "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Plotly.svg' alt='Plotly' width='48' height='48' />"
+      "icon": "<img src='/assets/images/skills/Plotly.svg' alt='Plotly' width='48' height='48' />"
     },
     {
       "name": "Seaborn",
       "description": "Visualizações estatísticas elegantes baseadas no Matplotlib.",
       "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Seaborn.svg' alt='Seaborn' width='48' height='48' />"
+      "icon": "<img src='/assets/images/skills/Seaborn.svg' alt='Seaborn' width='48' height='48' />"
     },
     {
       "name": "Power BI",
       "description": "Business Intelligence e relatórios executivos interativos.",
       "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Power-BI.svg' alt='Power BI' width='48' height='48' />"
+      "icon": "<img src='/assets/images/skills/Power-BI.svg' alt='Power BI' width='48' height='48' />"
     },
     { 
       "name": "Excel",
       "description": "Análise de dados, tabelas dinâmicas e automação com VBA.",
       "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Excel.svg' alt='Excel' width='48' height='48' />"
+      "icon": "<img src='/assets/images/skills/Excel.svg' alt='Excel' width='48' height='48' />"
     },
     {
       "name": "Streamlit",
