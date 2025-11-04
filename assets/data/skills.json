@@ -3,8 +3,8 @@
     {
       "name": "Python",
       "description": "Linguagem principal para Data Science, Machine Learning e automação.",
-      "icon_type": "devicon",
-      "icon": "devicon-python-plain colored"
+      "icon_type": "svg",
+      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' alt='Python' width='48' height='48' />"
     },
     {
       "name": "R",
@@ -45,8 +45,8 @@
     {
       "name": "SQL Server",
       "description": "Gerenciamento e consulta de dados em ambientes corporativos.",
-      "icon_type": "devicon",
-      "icon": "devicon-microsoftsqlserver-plain colored"
+      "icon_type": "svg",
+      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg' alt='SQL Server' width='48' height='48'/>"
     }
   ],
   "visualization": [
