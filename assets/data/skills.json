@@ -60,25 +60,25 @@
       "name": "Plotly",
       "description": "Gráficos interativos e dashboards dinâmicos para web.",
       "icon_type": "svg_path",
-      "icon": "assets/images/skills/Plotly.svg"
+      "icon": "./assets/images/skills/Plotly.svg"
     },
     {
       "name": "Seaborn",
       "description": "Visualizações estatísticas elegantes baseadas no Matplotlib.",
       "icon_type": "svg_path",
-      "icon": "assets/images/skills/seaborn.svg"
+      "icon": "./assets/images/skills/seaborn.svg"
     },
     {
       "name": "Power BI",
       "description": "Business Intelligence e relatórios executivos interativos.",
       "icon_type": "svg_path",
-      "icon": "assets/images/skills/Power-BI.svg"
+      "icon": "./assets/images/skills/Power-BI.svg"
     },
     {
       "name": "Excel",
       "description": "Análise de dados, tabelas dinâmicas e automação com VBA.",
       "icon_type": "svg_path",
-      "icon": "assets/images/skills/Excel.svg"
+      "icon": "./assets/images/skills/Excel.svg"
     },
     {
       "name": "Streamlit",
