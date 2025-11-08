@@ -13,9 +13,14 @@ export function createSkillCard(skill) {
     const safeName = skill?.name ?? '—'
     const safeDesc = skill?.description ?? ''
     
-    const icon = skill?.icon_type === 'devicon' 
-        ? `<i class="${skill.icon}"></i>` 
-        : (skill?.icon ?? '')
+    let icon
+    if (skill?.icon_type === 'devicon') {
+        icon = `<i class="${skill.icon}"></i>`
+    } else if (skill?.icon_type === 'svg_path') {
+        icon = `<img src="${skill.icon}" alt="${safeName}" width="48" height="48">`
+    } else {
+        icon = skill?.icon ?? ''
+    }
     
     return `
         <div class="skill-card" tabindex="0">

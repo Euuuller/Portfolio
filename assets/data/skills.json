@@ -3,8 +3,8 @@
     {
       "name": "Python",
       "description": "Linguagem principal para Data Science, Machine Learning e automação.",
-      "icon_type": "svg",
-      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' alt='Python' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     },
     {
       "name": "R",
@@ -27,8 +27,8 @@
     {
       "name": "Pandas",
       "description": "Biblioteca para manipulação, limpeza e análise de dados estruturados.",
-      "icon_type": "svg",
-      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg' alt='Pandas' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
     },
     {
       "name": "PostgreSQL",
@@ -45,46 +45,46 @@
     {
       "name": "SQL Server",
       "description": "Gerenciamento e consulta de dados em ambientes corporativos.",
-      "icon_type": "svg",
-      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg' alt='SQL Server' width='48' height='48'/>"
+      "icon_type": "svg_path",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
     }
   ],
   "visualization": [
     {
       "name": "Matplotlib",
       "description": "Visualizações estáticas personalizadas e gráficos científicos.",
-      "icon_type": "svg",
-      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg' alt='Matplotlib' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
     },
     {
       "name": "Plotly",
       "description": "Gráficos interativos e dashboards dinâmicos para web.",
-      "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Plotly.svg' alt='Plotly' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "assets/images/skills/Plotly.svg"
     },
     {
       "name": "Seaborn",
       "description": "Visualizações estatísticas elegantes baseadas no Matplotlib.",
-      "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/seaborn.svg' alt='Seaborn' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "assets/images/skills/seaborn.svg"
     },
     {
       "name": "Power BI",
       "description": "Business Intelligence e relatórios executivos interativos.",
-      "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Power-BI.svg' alt='Power BI' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "assets/images/skills/Power-BI.svg"
     },
     {
       "name": "Excel",
       "description": "Análise de dados, tabelas dinâmicas e automação com VBA.",
-      "icon_type": "svg",
-      "icon": "<img src='assets/images/skills/Excel.svg' alt='Excel' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "assets/images/skills/Excel.svg"
     },
     {
       "name": "Streamlit",
       "description": "Criação rápida de aplicações web para ciência de dados.",
-      "icon_type": "svg",
-      "icon": "<img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg' alt='Streamlit' width='48' height='48' />"
+      "icon_type": "svg_path",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"
     }
   ],
   "ml-stats": [
