@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--header-height) + var(--space-16)) var(--space-6) var(--space-16);
+  padding: calc(var(--header-height) + var(--space-20)) var(--space-6) var(--space-16);
   position: relative;
   text-align: center;
 }
@@ -54,25 +54,51 @@
 .hero-name {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Adjusted for exact match */
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  background: var(--color-accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-top: var(--space-2);
 }
 
+/* Rainbow Gradient Animation for Typing Text */
 .hero-role {
-  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-accent-primary);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem); /* Match 7xl size */
+  font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-6);
   min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+}
+
+.typing-text {
+  background: linear-gradient(
+    to right,
+    #ef4444,
+    #eab308,
+    #22c55e,
+    #3b82f6,
+    #a855f7
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .typing-cursor {
-  animation: blink 1s infinite;
+  font-weight: 300;
+  color: #6b7280;
+  animation: blink 1s step-end infinite;
 }
 
 .hero-description {
