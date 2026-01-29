@@ -1,0 +1,31 @@
+/* ============================================
+   FEEDBACK - Toast Notifications
+   ============================================ */
+
+.toast {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  transition: all var(--transition-base);
+}
+
+.toast.active {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast.success {
+  border-color: var(--color-success);
+}
+
+.toast.error {
+  border-color: var(--color-error);
+}

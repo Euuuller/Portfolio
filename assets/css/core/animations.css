@@ -1,0 +1,407 @@
+/* ============================================
+   ANIMATIONS - Scroll Reveal & Effects
+   ============================================ */
+
+/* Scroll Reveal Base */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal Variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================
+   MATH FORMULA FLOAT ANIMATION
+   ============================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: var(--base-opacity, 0.12);
+  }
+  25% {
+    transform: translateY(-15px) translateX(8px) rotate(1deg);
+    opacity: calc(var(--base-opacity, 0.12) * 1.2);
+  }
+  50% {
+    transform: translateY(-8px) translateX(-5px) rotate(-0.5deg);
+    opacity: var(--base-opacity, 0.12);
+  }
+  75% {
+    transform: translateY(-20px) translateX(6px) rotate(0.5deg);
+    opacity: calc(var(--base-opacity, 0.12) * 0.9);
+  }
+}
+
+.math-formula {
+  will-change: transform, opacity;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(40px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(50px);
+  }
+}
+
+.image-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Button Hover Effects */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Card Hover Glow */
+.skill-card::before,
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-gradient);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.skill-card:hover::before,
+.project-card:hover::before {
+  opacity: 0.1;
+}
+
+.skill-card,
+.project-card {
+  position: relative;
+}
+
+/* Tab Panel Animation */
+.tab-panel {
+  animation: tabFadeIn 0.3s ease;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project Filter Animation */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.filtering-out {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.project-card.filtering-in {
+  animation: projectFadeIn 0.4s ease forwards;
+}
+
+@keyframes projectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Form Focus Animation */
+.form-group input:focus,
+.form-group textarea:focus {
+  animation: focusPulse 0.3s ease;
+}
+
+@keyframes focusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Submit Button Loading */
+.btn-submit.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-submit.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: var(--radius-full);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success/Error Shake */
+.form-group.error {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Toast Slide In */
+.toast {
+  animation: toastSlideIn 0.3s ease forwards;
+}
+
+.toast.hiding {
+  animation: toastSlideOut 0.3s ease forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Back to Top Bounce */
+.back-to-top:hover svg {
+  animation: arrowBounce 0.6s ease infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Stat Card Counter Animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-value {
+  animation: countUp 0.5s ease forwards;
+}
+
+/* Mobile Menu Slide */
+.mobile-menu {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header Scroll Effect */
+.header {
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  animation: headerShrink 0.3s ease forwards;
+}
+
+@keyframes headerShrink {
+  from {
+    padding: var(--space-4) 0;
+  }
+  to {
+    padding: var(--space-2) 0;
+  }
+}
+
+/* Link Underline Animation */
+.nav-link::after {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Project Overlay Fade */
+.project-overlay {
+  transition: opacity 0.3s ease;
+}
+
+/* Skill Icon Hover */
+.skill-icon {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Contact Item Hover */
+.contact-item {
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--color-accent-primary);
+  color: white;
+}
+
+/* Filter Button Active State */
+.filter-btn {
+  transition: all 0.2s ease;
+}
+
+.filter-btn:active {
+  transform: scale(0.95);
+}
+
+/* Badge Pulse */
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0);
+  }
+}
+
+.badge-dot {
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .math-formula {
+    animation: none !important;
+  }
+}

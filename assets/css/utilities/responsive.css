@@ -1,0 +1,101 @@
+/* ============================================
+   RESPONSIVE - Global & Utilities
+   ============================================ */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+  :root {
+    --container-padding: var(--space-5);
+  }
+  
+  .section {
+    padding: var(--space-16) 0;
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 70px;
+    --container-padding: var(--space-4);
+  }
+  
+  html {
+    font-size: 14px;
+  }
+  
+  .section {
+    padding: var(--space-12) 0;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-base);
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 479px) {
+  .section-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Print Styles - Global Hiding */
+@media print {
+  .header,
+  .footer,
+  .back-to-top,
+  .math-background,
+  .scroll-indicator,
+  .mobile-toggle,
+  .theme-toggle,
+  .btn-cv {
+    display: none !important;
+  }
+}
+
+/* Dark Mode Detection (System Preference) */
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+/* Focus Visible Polyfill */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Safe Area Insets (Notch Devices) */
+@supports (padding: max(0px)) {
+  .header {
+    padding-left: max(var(--space-4), env(safe-area-inset-left));
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+  }
+  
+  .container {
+    padding-left: max(var(--container-padding), env(safe-area-inset-left));
+    padding-right: max(var(--container-padding), env(safe-area-inset-right));
+  }
+}

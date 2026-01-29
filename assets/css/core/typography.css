@@ -1,0 +1,28 @@
+/* ============================================
+   TYPOGRAPHY - Global Typography & Fonts
+   ============================================ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.text-highlight {
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-semibold);
+}
+
+strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}

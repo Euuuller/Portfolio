@@ -1,0 +1,146 @@
+/* ============================================
+   BUTTONS - Variants & Shared Styles
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--color-accent-primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-hover);
+}
+
+.btn-cv {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-cv:hover {
+  transform: scale(1.05);
+  color: var(--color-bg-primary);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .icon-sun {
+  display: block;
+}
+
+[data-theme="light"] .icon-moon {
+  display: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  .btn-cv {
+    display: none;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+}

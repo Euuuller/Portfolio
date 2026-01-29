@@ -1,0 +1,119 @@
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-16);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.contact-item:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(4px);
+  color: inherit;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.contact-form {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  .contact-info {
+    gap: var(--space-3);
+  }
+  
+  .contact-item {
+    padding: var(--space-3);
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-form {
+    padding: var(--space-5);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}

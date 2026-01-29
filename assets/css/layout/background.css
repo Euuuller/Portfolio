@@ -1,0 +1,186 @@
+/* ==========================================================================
+   FUNDO MATEMÁTICO COM GRID E GRADIENTE
+   ==========================================================================
+   Este arquivo é responsável por criar o fundo visual da aplicação.
+   Ele implementa:
+   1. Um gradiente de fundo base
+   2. Um padrão de grade (grid) estilo caderno de matemática
+   3. Linhas de grade principais e secundárias
+   4. Estilização para fórmulas matemáticas flutuantes
+   ========================================================================== */
+
+/* 
+ * Container Principal do Fundo
+ * --------------------------------------------------------------------------
+ * Este seletor define a camada base do fundo que cobre toda a tela.
+ */
+.math-background {
+  /* 
+   * Posicionamento Fixo:
+   * Mantém o fundo estático mesmo quando o usuário rola a página.
+   * top: 0, left: 0 garante que comece no canto superior esquerdo.
+   */
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /* 
+   * Dimensões Totais:
+   * Ocupa 100% da largura e altura da viewport (janela do navegador).
+   */
+  width: 100%;
+  height: 100%;
+  
+  /* 
+   * Interatividade:
+   * 'none' permite que cliques passem através do fundo e atinjam
+   * os elementos interativos (botões, links) que estão por cima.
+   */
+  pointer-events: none;
+  
+  /* 
+   * Ordem de Empilhamento (Z-Index):
+   * Valor negativo (-1) garante que este elemento fique atrás de
+   * todo o conteúdo principal do site.
+   */
+  z-index: -1;
+  
+  /* Evita que qualquer conteúdo interno cause barras de rolagem */
+  overflow: hidden;
+  
+  /* 
+   * Cor de Fundo Base:
+   * Usa uma variável CSS (--gradient-bg) para facilitar a manutenção
+   * e trocas de tema.
+   */
+  background: var(--gradient-bg);
+  background-attachment: fixed;
+}
+
+/* 
+ * Padrão de Grade Menor (Grid Secundário)
+ * --------------------------------------------------------------------------
+ * Usa o pseudo-elemento ::before para criar as linhas finas da grade.
+ * Isso evita criar div extra no HTML apenas para decoração.
+ */
+.math-background::before {
+  /* Necessário para que o pseudo-elemento seja renderizado */
+  content: '';
+  
+  /* Posicionado absolutamente em relação ao .math-background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 
+   * Criação das Linhas da Grade:
+   * Usa dois gradientes lineares sobrepostos:
+   * 1. O primeiro cria linhas horizontais
+   * 2. O segundo (com 90deg) cria linhas verticais
+   * 
+   * A sintaxe 'color 1px, transparent 1px' cria uma linha sólida de 1px
+   * seguida de transparência, gerando o efeito de linha fina.
+   */
+  background-image: 
+    linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+    
+  /* 
+   * Tamanho das Células:
+   * Define que cada quadrado da grade menor terá 40x40 pixels.
+   */
+  background-size: 30px 30px;
+  
+  /* 
+   * Máscara de Opacidade (Vignette):
+   * Aplica um gradiente de transparência sobre a grade para que ela
+   * não seja uniforme em toda a tela (geralmente mais suave nas bordas).
+   * Webkit prefixo é para compatibilidade com Chrome/Safari.
+   */
+  mask-image: var(--gradient-grid);
+  -webkit-mask-image: var(--gradient-grid);
+  
+  pointer-events: none;
+}
+
+/* 
+ * Padrão de Grade Maior (Grid Principal)
+ * --------------------------------------------------------------------------
+ * Usa o pseudo-elemento ::after para criar as linhas mais fortes e
+ * espaçadas, comum em papéis milimetrados ou de engenharia.
+ */
+.math-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 
+   * Linhas da Grade Principal:
+   * Similar ao ::before, mas usa a cor --color-grid-line-strong
+   * para destacar estas linhas a cada 5 células.
+   */
+  background-image: 
+    linear-gradient(var(--color-grid-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line-strong) 1px, transparent 1px);
+    
+  /* 
+   * Tamanho das Células Maiores:
+   * 200px é múltiplo de 40px (5 x 40 = 200), garantindo que
+   * as linhas fortes se alinhem perfeitamente com as linhas finas.
+   */
+  background-size: 200px 200px;
+  
+  /* Aplica a mesma máscara de suavização */
+  mask-image: var(--gradient-grid);
+  -webkit-mask-image: var(--gradient-grid);
+  
+  pointer-events: none;
+}
+
+/* 
+ * Fórmulas Matemáticas Flutuantes
+ * --------------------------------------------------------------------------
+ * Estiliza os elementos decorativos (equações) que flutuam no fundo.
+ */
+.math-formula {
+  /* Permite posicionamento livre (top/left definidos via JS ou inline style) */
+  position: absolute;
+  
+  /* 
+   * Tipografia:
+   * Usa fontes serifadas para imitar a estética de livros e
+   * documentos acadêmicos de matemática.
+   */
+  font-family: 'Times New Roman', 'Cambria Math', serif;
+  font-style: italic;
+  
+  /* Cor do texto definida via variável */
+  color: var(--color-math-text);
+  
+  /* Impede que o usuário selecione/copie o texto decorativo */
+  user-select: none;
+  
+  /* Garante que não interfira no clique */
+  pointer-events: none;
+  
+  /* Impede que a fórmula quebre em várias linhas */
+  white-space: nowrap;
+  
+  /* Peso da fonte normal */
+  font-weight: 400;
+  
+  /* Leve espaçamento para melhor leitura */
+  letter-spacing: 0.02em;
+  
+  /* 
+   * Efeito de Brilho/Glow:
+   * Cria uma sombra suave e colorida ao redor do texto para dar
+   * um efeito de "neon" ou destaque sutil.
+   */
+  text-shadow: 0 0 30px var(--color-math-text-bright);
+}
