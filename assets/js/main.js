@@ -9,6 +9,7 @@ import { initTypingEffect } from './modules/TypingEffect.js';
 import { initNavigation } from './modules/Navigation.js';
 import { initThemeManager } from './modules/ThemeManager.js';
 import { initTabManager } from './modules/TabManager.js';
+import { initSkillsLoader } from './modules/SkillsLoader.js';
 import { initProjectFilter } from './modules/ProjectFilter.js';
 import { initScrollReveal } from './modules/ScrollReveal.js';
 import { initContactForm } from './modules/ContactForm.js';
@@ -38,6 +39,7 @@ const initApp = () => {
   initGithubStats();
   
   // Components & Features
+  initSkillsLoader();
   initTabManager();
   initProjectFilter();
   initContactForm();
