@@ -81,11 +81,11 @@
     <!-- CSS Principal: Arquivo modular que importa todos os estilos do projeto -->
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- Favicon: Ícone que aparece na aba do navegador (aqui usando um SVG inline para performance) -->
+    <!-- Favicon: Terminal Style >_ -->
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Cpath d='M8 10L16 16L8 22M20 22H24' stroke='%233b82f6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E"
     />
   </head>
   <body>
@@ -110,8 +110,9 @@
     -->
       <nav class="navbar" role="navigation" aria-label="Navegação principal">
         <div class="nav-container">
-          <!-- Logo -->
+          <!-- Logo: Estilo Terminal >_ ED -->
           <a href="#" class="nav-logo" aria-label="Voltar ao início">
+            <span class="logo-terminal">&gt;_</span>
             <span class="logo-text">ED</span>
           </a>
 
@@ -161,10 +162,7 @@
 
           <!-- Ações da Barra de Navegação (Botões) -->
           <div class="nav-actions">
-            <!-- Botão CV -->
-            <button class="btn-cv" id="btnCV" aria-label="Baixar currículo">
-              <span>CV</span>
-            </button>
+
 
             <!-- 
             Alternador de Tema (Dark/Light Mode) 
@@ -250,7 +248,7 @@
           Deve conter as palavras-chave principais (Nome, Função).
         -->
           <h1 class="hero-title">
-            <span class="hero-greeting">Olá, eu sou</span>
+            <span class="hero-greeting">Olá, seja muito bem-vindo ao meu portfólio de projetos!</span>
             <span class="hero-name">Euller dos Santos Rodrigues Duarte</span>
           </h1>
 
@@ -263,7 +261,7 @@
           </div>
 
           <p class="hero-description">
-            Olá, seja muito bem vindo ao meu portfólio de projetos
+            Fique à vontade para explorar o portfólio e entrar em contato pelos links ao final da página.
           </p>
 
           <!-- Botões de Ação (Call to Action) -->
@@ -287,7 +285,7 @@
         </div>
 
         <!-- Indicador de Scroll (Seta pulando) -->
-        <div class="scroll-indicator" aria-hidden="true">
+        <a href="#about" class="scroll-indicator" aria-label="Rolar para a seção Sobre">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -296,7 +294,7 @@
           >
             <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
           </svg>
-        </div>
+        </a>
       </section>
 
       <!-- 

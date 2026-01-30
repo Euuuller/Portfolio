@@ -1,78 +1,104 @@
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
+/* ==========================================================================
+   ARQUIVO: skills.css
+   DESCRIÇÃO: Estilos da seção "Habilidades" (Skills).
+   Gerencia a aparência da navegação por abas (tabs) e o grid de cartões de
+   habilidades, exibindo ícones e descrições das tecnologias.
+   ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   NAVEGAÇÃO POR ABAS (TABS)
+   Container principal da área de abas.
+   -------------------------------------------------------------------------- */
 .skills-tabs {
   max-width: 1000px;
   margin: 0 auto;
 }
 
+/* Container dos botões de navegação */
 .tabs-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que botões quebrem linha se necessário */
   justify-content: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-10); /* Espaço até o conteúdo */
   padding: var(--space-2);
-  background: transparent; /* Background removido */
+  background: transparent;
   border-radius: var(--radius-full);
 }
 
+/* Botão individual da aba */
 .tab-btn {
   padding: var(--space-3) var(--space-6);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-full); /* Botão arredondado */
   transition: all var(--transition-fast);
-  white-space: nowrap;
+  white-space: nowrap; /* Impede que o texto quebre dentro do botão */
 }
 
+/* Hover no botão */
 .tab-btn:hover {
   color: var(--color-text-primary);
   background: var(--color-bg-hover);
 }
 
+/* Estado Ativo (Aba selecionada) */
 .tab-btn.active {
   background: var(--color-accent-primary);
   color: white;
 }
 
+/* --------------------------------------------------------------------------
+   PAINÉIS DE CONTEÚDO
+   Área que mostra o conteúdo da aba selecionada.
+   -------------------------------------------------------------------------- */
 .tab-panel {
-  display: none;
+  display: none; /* Oculto por padrão */
 }
 
+/* Painel visível */
 .tab-panel.active {
-  display: block;
-  animation: fadeIn 0.2s ease;
+  display: block; /* Mostra o painel quando ativo */
+  animation: fadeIn 0.2s ease; /* Efeito suave de aparecimento */
 }
 
-/* ============================================
-   SKILL CARDS & ICONS
-   ============================================ */
+/* ==========================================================================
+   CARDS DE HABILIDADE (SKILL CARDS)
+   Estilos visuais de cada bloco de tecnologia.
+   ========================================================================== */
 
+/* Container do Card */
 .skill-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: center; /* Centraliza conteúdo verticalmente */
+  
   padding: var(--space-1);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  
   transition: all var(--transition-normal);
+  
   width: 100%;
   height: 100%;
-  min-height: 200px;
+  min-height: 200px; /* Altura mínima garantida */
 }
 
+/* Interatividade: Hover no Card */
 .skill-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-accent-primary);
+  transform: translateY(-4px); /* Levanta levemente */
+  border-color: var(--color-accent-primary); /* Borda colorida */
   box-shadow: var(--shadow-md);
 }
 
+/* --------------------------------------------------------------------------
+   ÍCONES
+   Área reservada para o ícone da tecnologia.
+   -------------------------------------------------------------------------- */
 .skill-icon {
   width: 64px;
   height: 64px;
@@ -82,19 +108,24 @@
   margin-bottom: var(--space-4);
 }
 
-/* Standardize all icon types */
+/* Ícones de Fonte (ex: FontAwesome, Devicon font) */
 .skill-icon i {
   font-size: 40px;
-  line-height: 1;
+  line-height: 1; /* Remove espaçamento extra de linha */
 }
 
+/* Ícones SVG ou Imagens */
 .skill-icon svg,
 .skill-icon img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  object-fit: contain; /* Garante proporção correta */
 }
 
+/* --------------------------------------------------------------------------
+   TEXTOS DO CARD
+   Nome e descrição da habilidade.
+   -------------------------------------------------------------------------- */
 .skill-name {
   font-size: var(--text-lg);
   font-weight: var(--font-weight-semibold);
@@ -108,25 +139,33 @@
   line-height: 1.5;
 }
 
+/* --------------------------------------------------------------------------
+   GRID DE SKILLS
+   Layout principal dos cards.
+   -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
+  /* Cria 4 colunas de tamanho igual */
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* ==========================================================================
+   RESPONSIVIDADE
+   Adaptação para diferentes telas.
+   ========================================================================== */
 
 /* Tablet (768px - 1199px) */
 @media (max-width: 1199px) {
   .skills-grid {
+    /* Auto-ajuste: colunas com mínimo de 160px */
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
 
-/* Mobile (below 768px) */
+/* Mobile (abaixo de 768px) */
 @media (max-width: 767px) {
+  /* Botões de aba empilhados verticalmente */
   .tabs-nav {
     flex-direction: column;
     border-radius: var(--radius-lg);
@@ -137,6 +176,7 @@
     text-align: center;
   }
 
+  /* Grid com 2 colunas fixas */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-3);
@@ -144,9 +184,10 @@
 
   .skill-card {
     padding: var(--space-4);
-    min-height: 160px; /* Reduced for mobile */
+    min-height: 160px; /* Cartão menor no mobile */
   }
 
+  /* Redução de tamanho dos ícones */
   .skill-icon {
     width: 48px;
     height: 48px;
@@ -155,30 +196,32 @@
 
   .skill-icon svg,
   .skill-icon img {
-    width: 32px; /* Smaller icons on mobile */
+    width: 32px; 
     height: 32px;
   }
 
+  /* Redução de tamanho de texto */
   .skill-name {
-    font-size: var(--text-sm); /* Smaller text */
+    font-size: var(--text-sm);
     margin-bottom: var(--space-1);
   }
 
+  /* Limite de linhas para descrição (Line Clamp) */
   .skill-description {
     font-size: var(--text-xs);
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-line-clamp: 2; /* Mostra no máximo 2 linhas */
     line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: hidden; /* Esconde o excesso */
     line-height: 1.3;
   }
 }
 
-/* Small Mobile (below 480px) */
+/* Mobile Pequeno (abaixo de 480px) */
 @media (max-width: 479px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* Force 2 columns even on small screens */
+    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
     gap: var(--space-2);
   }
   
@@ -188,20 +231,21 @@
   }
 }
 
-/* Touch Device Optimizations */
+/* Otimização para Touch */
 @media (hover: none) and (pointer: coarse) {
+  /* Remove efeito de elevação no hover para evitar comportamento estranho no toque */
   .skill-card:hover {
     transform: none;
   }
 }
 
-/* Print Styles */
+/* Impressão */
 @media print {
   .skills-tabs {
-    display: none;
+    display: none; /* Esconde navegação */
   }
 
   .tab-panel {
-    display: block !important;
+    display: block !important; /* Mostra tudo na impressão */
   }
 }

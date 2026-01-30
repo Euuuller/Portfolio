@@ -1,113 +1,179 @@
-/* ============================================
-   HERO SECTION
-   ============================================ */
+/* ==========================================================================
+   ARQUIVO: hero.css
+   DESCRIÇÃO: Estilos da seção "Hero" (Primeira dobra do site).
+   Esta é a seção mais importante visualmente, contendo a apresentação principal,
+   animações de digitação, gradientes e chamadas para ação (CTAs).
+   ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   ESTRUTURA PRINCIPAL (HERO)
+   Container flexível que ocupa a tela inteira.
+   -------------------------------------------------------------------------- */
 .hero {
+  /* Garante que o Hero ocupe pelo menos 100% da altura da viewport */
   min-height: 100vh;
+  
+  /* Centralização total usando Flexbox */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+  /* Padding calculado dinamicamente:
+     Top: Altura do cabeçalho + espaço extra
+     Sides: Espaço lateral padrão
+     Bottom: Espaço inferior */
   padding: calc(var(--header-height) + var(--space-20)) var(--space-6) var(--space-16);
+  
   position: relative;
   text-align: center;
 }
 
+/* Container interno para limitar a largura do conteúdo */
 .hero-container {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
+/* --------------------------------------------------------------------------
+   BADGE (Etiqueta de Status)
+   Pequena etiqueta no topo "Disponível para trabalho".
+   -------------------------------------------------------------------------- */
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
+  
+  /* Fundo azul semitransparente */
   background: rgba(59, 130, 246, 0.1);
+  
+  /* Borda sutil */
   border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: var(--radius-full);
+  
   font-size: var(--text-sm);
   color: var(--color-accent-primary);
   margin-bottom: var(--space-8);
 }
 
+/* Ponto verde pulsante dentro do badge */
 .badge-dot {
   width: 8px;
   height: 8px;
-  background: var(--color-success);
-  border-radius: var(--radius-full);
-  animation: pulse 2s infinite;
+  background: var(--color-success); /* Verde sucesso */
+  border-radius: var(--radius-full); /* Torna circular */
+  animation: pulse 2s infinite; /* Animação definida em about.css ou global */
 }
 
+/* --------------------------------------------------------------------------
+   TIPOGRAFIA DO HERO
+   Títulos e textos de apresentação.
+   -------------------------------------------------------------------------- */
 .hero-title {
   margin-bottom: var(--space-6);
 }
 
+/* Texto de saudação ("Olá, eu sou") */
 .hero-greeting {
-  display: block;
+  display: block; /* Quebra linha */
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-normal);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-2);
 }
 
+/* Nome Principal */
 .hero-name {
   display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Adjusted for exact match */
+  font-family: var(--font-display); /* Fonte de destaque */
+  
+  /* Clamp define tamanho responsivo:
+     - Mínimo: 2rem
+     - Ideal: 5% da largura da tela (5vw)
+     - Máximo: 3.5rem */
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Ajustado para caber em telas menores */
+  
   font-weight: var(--font-weight-bold);
-  line-height: 1.1;
+  line-height: 1.1; /* Entrelinha apertada para títulos grandes */
   color: var(--color-text-primary);
   margin-top: var(--space-2);
 }
 
-/* Rainbow Gradient Animation for Typing Text */
+/* --------------------------------------------------------------------------
+   ANIMAÇÃO DE TEXTO DIGITADO (TYPING)
+   Efeito de texto gradiente animado.
+   -------------------------------------------------------------------------- */
 .hero-role {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5rem); /* Match 7xl size */
+  
+  /* Tamanho grande e responsivo para o cargo/função */
+  font-size: clamp(3rem, 6vw, 5rem); 
+  
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-6);
+  
+  /* Altura mínima reservada para evitar layout shift (pulo) durante carregamento */
   min-height: 1.5em;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.2em;
 }
 
+/* Texto com Gradiente Arco-íris */
 .typing-text {
+  /* Define o gradiente linear com 6 cores (Roxo ao Vermelho) */
   background: linear-gradient(
     to right,
-    #ef4444,
-    #eab308,
-    #22c55e,
-    #3b82f6,
-    #a855f7
+    #240b36, /* Deep Purple */
+    #440d35, /* Dark Plum */
+    #640f34, /* Plum */
+    #831133, /* Dark Red */
+    #a31232, /* Deep Crimson */
+    #c31432  /* Bright Crimson */
   );
+  
+  /* Aplica o gradiente Apenas ao texto (Mágica do CSS moderno) */
   -webkit-background-clip: text;
   background-clip: text;
+  
+  /* Torna o texto transparente para mostrar o fundo */
   color: transparent;
+  
+  /* Aumenta o tamanho do background para permitir a animação de deslize */
   background-size: 200% auto;
+  
+  /* Anima o fundo movendo-o horizontalmente */
   animation: rainbow 5s linear infinite;
 }
 
+/* Keyframes para mover o gradiente */
 @keyframes rainbow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }   /* Posição inicial */
+  100% { background-position: 100% 50%; } /* Posição final (deslocado) */
 }
 
+/* Cursor piscante (|) */
 .typing-cursor {
   font-weight: 300;
-  color: #6b7280;
-  animation: blink 1s step-end infinite;
+  color: #6b7280; /* Cinza */
+  animation: blink 1s step-end infinite; /* Pisca a cada 1 segundo */
 }
 
+/* Descrição curta abaixo do título */
 .hero-description {
   font-size: var(--text-lg);
   color: var(--color-text-secondary);
-  max-width: 600px;
+  max-width: 600px; /* Limita largura para leitura confortável */
   margin: 0 auto var(--space-8);
 }
 
+/* --------------------------------------------------------------------------
+   BOTÕES DE AÇÃO (CTAs)
+   Container para os botões principais.
+   -------------------------------------------------------------------------- */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -115,32 +181,65 @@
   gap: var(--space-4);
 }
 
+/* --------------------------------------------------------------------------
+   INDICADOR DE SCROLL
+   Seta animada indicando para descer a página.
+   -------------------------------------------------------------------------- */
 .scroll-indicator {
   position: absolute;
   bottom: var(--space-8);
   left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  animation: bounce 2s infinite; 
+}
+
+.scroll-indicator:hover {
+  opacity: 0.8;
 }
 
 .scroll-indicator svg {
-  width: 24px;
-  height: 24px;
+  width: 32px; /* Aumentado levemente para melhor toque */
+  height: 32px;
   color: var(--color-text-tertiary);
+  transition: color 0.3s ease;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+.scroll-indicator:hover svg {
+  color: var(--color-accent-primary);
+}
 
-/* Mobile (below 768px) */
+/* Animação Bounce (Pulo suave) */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   Ajustes específicos para dispositivos móveis e tablets.
+   ========================================================================== */
+
+/* Mobile (abaixo de 768px) */
 @media (max-width: 767px) {
   .hero {
+    /* Ajusta padding para telas menores */
     padding: calc(var(--header-height) + var(--space-4)) var(--space-4) var(--space-8);
-    min-height: 100vh; /* Restore full height */
+    
+    min-height: 100vh; /* Mantém altura total */
     justify-content: center;
   }
   
+  /* Reduz tamanhos de fonte no mobile */
   .hero-greeting {
     font-size: var(--text-lg);
   }
@@ -153,6 +252,7 @@
     font-size: var(--text-lg);
   }
   
+  /* Botões ocupam 100% da largura (empilhados) */
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
@@ -163,24 +263,26 @@
   }
 }
 
-/* Small Mobile (below 480px) */
+/* Mobile Pequeno (abaixo de 480px) */
 @media (max-width: 479px) {
   .hero-name {
-    font-size: var(--text-xl);
+    font-size: var(--text-xl); /* Ainda menor para telas muito estreitas */
   }
 }
 
-/* Landscape Mobile */
+/* Mobile em paisagem (Landscape) */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero {
-    min-height: auto;
+    min-height: auto; /* Remove altura mínima fixa para evitar scroll ruim */
     padding: calc(var(--header-height) + var(--space-6)) var(--space-4);
   }
   
+  /* Esconde o indicador de scroll pois o espaço vertical é curto */
   .scroll-indicator {
     display: none;
   }
   
+  /* Reduz margens para compactar layout */
   .hero-badge {
     margin-bottom: var(--space-4);
   }
@@ -194,7 +296,7 @@
   }
 }
 
-/* Print Styles */
+/* Impressão */
 @media print {
   .hero {
     min-height: auto;

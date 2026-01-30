@@ -1,76 +1,103 @@
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
+/* ==========================================================================
+   ARQUIVO: projects.css
+   DESCRIÇÃO: Estilos da seção "Projetos".
+   Controla a aparência da galeria de projetos, incluindo os filtros de
+   categoria e o layout em grid dos cartões de projeto.
+   ========================================================================== */
 
-.projects {
-  /* Background removido para uniformidade */
-}
+/* --------------------------------------------------------------------------
+   ESTRUTURA DA SEÇÃO
+   -------------------------------------------------------------------------- */
 
+   /* --------------------------------------------------------------------------
+   FILTRO DE CATEGORIAS
+   Botões para filtrar projetos (ex: Todos, Web, Data Science).
+   -------------------------------------------------------------------------- */
 .projects-filter {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; /* Permite que botões caiam para proxima linha se faltar espaço */
+  justify-content: center; /* Centraliza os botões */
   gap: var(--space-3);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-10); /* Espaço entre filtros e cards */
 }
 
+/* Botão de Filtro Individual */
 .filter-btn {
   padding: var(--space-2) var(--space-5);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  background: transparent; /* Background removido para uniformidade */
+  
+  background: transparent; /* Fundo transparente por padrão */
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-full); /* Formato de pílula */
+  
   transition: all var(--transition-fast);
 }
 
+/* Estado Hover (Mouse sobre) */
 .filter-btn:hover {
   color: var(--color-text-primary);
   border-color: var(--color-border-hover);
 }
 
+/* Estado Ativo (Filtro selecionado) */
 .filter-btn.active {
-  background: var(--color-accent-primary);
+  background: var(--color-accent-primary); /* Cor de destaque */
   border-color: var(--color-accent-primary);
-  color: white;
+  color: white; /* Texto branco para contraste */
 }
 
+/* --------------------------------------------------------------------------
+   GRID DE PROJETOS
+   Layout responsivo para os cartões.
+   -------------------------------------------------------------------------- */
 .projects-grid {
   display: grid;
+  
+  /* Mágica do Grid Responsivo sem Media Queries excessivas:
+     - repeat(auto-fill): Cria tantas colunas quanto couberem
+     - minmax(350px, 1fr): Cada coluna tem no mínimo 350px e no máximo 1 fração do espaço restante.
+     Isso faz o grid se auto-ajustar. */
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  
   gap: var(--space-6);
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* ==========================================================================
+   RESPONSIVIDADE (Ajustes finos)
+   Media queries para garantir layout perfeito em todos os dispositivos.
+   ========================================================================== */
 
-/* Large Desktop (1200px+) */
+/* Desktop Grande (acima de 1200px) */
 @media (min-width: 1200px) {
   .projects-grid {
+    /* Força exatamente 3 colunas em telas grandes */
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Tablet (768px - 1199px) */
+/* Tablet e Desktop Médio (768px até 1199px) */
 @media (max-width: 1199px) {
   .projects-grid {
+    /* Reduz a largura mínima do card para 300px para caber melhor */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 
-/* Mobile (below 768px) */
+/* Mobile (abaixo de 768px) */
 @media (max-width: 767px) {
+  /* Alinha filtros verticalmente para facilitar toque */
   .projects-filter {
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch; /* Estica botões para largura total */
   }
   
   .filter-btn {
-    width: 100%;
+    width: 100%; /* Botão full-width */
   }
   
+  /* Grid vira uma única coluna */
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -84,7 +111,7 @@
   }
 }
 
-/* Small Mobile (below 480px) */
+/* Mobile Pequeno (abaixo de 480px) */
 @media (max-width: 479px) {
   .project-stats {
     flex-direction: column;
@@ -92,8 +119,10 @@
   }
 }
 
-/* Touch Device Optimizations */
+/* OTIMIZAÇÃO PARA TELAS DE TOQUE
+   Detecta dispositivos que não têm mouse (hover: none) */
 @media (hover: none) and (pointer: coarse) {
+  /* Mostra o overlay (info sobre o projeto) sempre, pois não há "hover" */
   .project-overlay {
     opacity: 1;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
@@ -106,21 +135,24 @@
     justify-content: flex-end;
   }
   
+  /* Remove efeito de transformação no hover para evitar "sticky hover" no mobile */
   .project-card:hover {
     transform: none;
   }
 }
 
-/* Print Styles */
+/* Impressão */
 @media print {
   .projects-grid {
     grid-template-columns: 1fr;
   }
   
+  /* Esconde filtros na impressão (irrelevantes no papel) */
   .projects-filter {
     display: none;
   }
   
+  /* Evita que um card seja quebrado ao meio na virada da página */
   .project-card {
     break-inside: avoid;
     page-break-inside: avoid;

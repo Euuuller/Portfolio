@@ -37,18 +37,26 @@
 }
 
 .nav-logo {
-  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: 'Space Mono', monospace; /* Fonte monoespaçada para estilo terminal */
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
 }
 
-.logo-text {
-  background: var(--color-accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.logo-terminal {
+  color: var(--color-accent-primary);
+  font-weight: 800;
 }
+
+.logo-text {
+  /* Mantém o texto "ED" com a cor padrão, sem gradiente para máxima legibilidade neste estilo */
+  color: var(--color-text-primary);
+}
+
+
 
 .nav-menu {
   display: flex;
@@ -58,7 +66,7 @@
 
 .nav-link {
   position: relative;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   padding: var(--space-2) 0;
