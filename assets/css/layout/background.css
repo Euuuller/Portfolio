@@ -201,10 +201,7 @@
 
   /* Define um fundo mais simples e estático para o container */
   .math-background {
-    /* Usa o gradiente que já respeita o tema claro/escuro */
-    background: var(--gradient-bg);
-    /* background-attachment: fixed; removido para performance mobile */
-    background-size: 100% 100vh;
+    display: none !important;
   }
 
   /* Remove elementos flutuantes decorativos (fórmulas) */

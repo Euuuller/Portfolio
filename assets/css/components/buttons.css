@@ -132,6 +132,10 @@
   .btn-cv {
     display: none;
   }
+
+  .btn-primary {
+    box-shadow: none !important;
+  }
 }
 
 /* Touch Device Optimizations */

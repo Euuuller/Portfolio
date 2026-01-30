@@ -249,10 +249,8 @@
     line-height: 1.1;
   }
 
-  /* Garante que a seta apareça acima do fundo */
   .scroll-indicator {
-    z-index: 10; 
-    bottom: var(--space-12); /* Sobe mais ainda a seta (aprox 48px) */
+    display: none !important;
   }
   
   .hero-role {
