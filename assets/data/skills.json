@@ -22,7 +22,7 @@
       "name": "LaTeX",
       "description": "Sistema de preparação de documentos de alta qualidade.",
       "icon_type": "svg_path",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg"
+      "icon": "./assets/images/icons/skills/LaTeX.svg"
     }
   ],
   "visualization": [
@@ -42,7 +42,7 @@
       "name": "Looker Studio",
       "description": "Criação de dashboards interativos e relatórios personalizados.",
       "icon_type": "svg_path",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/37/Google_Looker_Studio_logo.svg"
+      "icon": "./assets/images/icons/skills/Looker.svg"
     },
     {
       "name": "Figma",
@@ -68,7 +68,7 @@
       "name": "SciPy",
       "description": "Ecossistema de software open-source para matemática e engenharia.",
       "icon_type": "svg_path",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scipy/scipy-original.svg"
+      "icon": "./assets/images/icons/skills/Scipy.svg"
     },
     {
       "name": "Scikit-Learn",
@@ -88,7 +88,7 @@
       "name": "GitHub",
       "description": "Hospedagem de código-fonte e colaboração em projetos.",
       "icon_type": "svg_path",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+      "icon": "./assets/images/icons/skills/Github.svg"
     },
     {
       "name": "Docker",

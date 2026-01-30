@@ -144,25 +144,9 @@
    EFEITO DE BRILHO (GLOW)
    Cria uma aura pulsante atrás da imagem de perfil.
    -------------------------------------------------------------------------- */
+/* Efeito de brilho removido para performance e limpeza visual */
 .about-glow {
-  position: absolute;
-  
-  /* Expande o elemento para fora do container pai (negativo margin effectively) */
-  inset: -1rem; 
-  
-  border-radius: 50%;
-  
-  /* Gradiente colorido para o brilho */
-  background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary), #22c55e); 
-  
-  /* Opacidade baixa para ser sutil */
-  opacity: 0.2;
-  
-  /* Desfoca o elemento para criar o efeito de luz difusa */
-  filter: blur(32px);
-  
-  /* Animação definida no final do arquivo */
-  animation: pulse 2s infinite;
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -208,10 +192,11 @@
   height: 100%;
 }
 
+
 /* Adaptação para Modo Escuro */
 [data-theme="dark"] .stat-card {
-  /* Fundo mais escuro e transparente */
-  background: rgba(5, 5, 5, 0.4); 
+  /* Fundo com opacidade reduzida (0.1) para diminuir o cinza */
+  background: rgba(5, 5, 5, 0.1); 
   border-color: rgba(255, 255, 255, 0.05); 
 }
 

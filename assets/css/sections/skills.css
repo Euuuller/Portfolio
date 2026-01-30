@@ -88,11 +88,15 @@
   min-height: 200px; /* Altura mínima garantida */
 }
 
-/* Interatividade: Hover no Card */
+/* Interatividade: Hover no Card (Efeito Glassy/Glow solicitado) */
 .skill-card:hover {
-  transform: translateY(-4px); /* Levanta levemente */
-  border-color: var(--color-accent-primary); /* Borda colorida */
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px); 
+  /* Fundo azulado levemente transparente (Glassmorphism sutil) */
+  background: rgba(59, 130, 246, 0.1); 
+  /* Borda mais clara e visível para destacar o card */
+  border-color: rgba(59, 130, 246, 0.3);
+  /* Sombra interna para dar profundidade (opcional, mas realça o efeito) */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* --------------------------------------------------------------------------
