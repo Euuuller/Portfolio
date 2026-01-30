@@ -201,10 +201,9 @@
 
   /* Define um fundo mais simples e estático para o container */
   .math-background {
-    /* Mantém apenas o gradiente base, sem efeitos de "vidro" ou grid complexo */
-    background: var(--color-bg-primary); 
-    /* Opcional: Um gradiente muito leve se quiser manter a estética sem custo */
-    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+    /* Usa o gradiente que já respeita o tema claro/escuro */
+    background: var(--gradient-bg);
+    background-attachment: fixed;
   }
 
   /* Remove elementos flutuantes decorativos (fórmulas) */

@@ -112,5 +112,24 @@
       "-5% Taxa de Churn",
       "Pipeline Diário"
     ]
+  },
+  {
+    "id": "automacao-estoque",
+    "title": "Automação de Estoque",
+    "category": "Analytics",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+    "tags": ["SQL", "Python", "Excel"],
+    "links": {
+      "demo": "#",
+      "repo": "#"
+    },
+    "challenge": "O controle de inventário era manual e suscetível a erros, resultando em dados de estoque imprecisos e ineficiência operacional.",
+    "solution": "Desenvolvi uma solução automatizada integrando SQL e Python para monitoramento de estoque em tempo real e geração de alertas automáticos.",
+    "impact": "Aumento de 40% na eficiência operacional e redução total de erros de lançamento manual.",
+    "metrics": [
+      "Eficiência +40%",
+      "Erro Humano Zero",
+      "Monitoramento Realtime"
+    ]
   }
 ]

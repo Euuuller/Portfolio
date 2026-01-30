@@ -13,6 +13,7 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base), background var(--transition-base);
 }
 
 /* Selection */

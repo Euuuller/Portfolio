@@ -10,7 +10,6 @@ export const initProjectModal = async () => {
 
   // DOM Elements to populate
   const elements = {
-    image: document.getElementById('modalImage'),
     category: document.getElementById('modalCategory'),
     title: document.getElementById('modalTitle'),
     challenge: document.getElementById('modalChallenge'),
@@ -40,8 +39,6 @@ export const initProjectModal = async () => {
     if (!project) return;
 
     // Populate Data
-    elements.image.src = project.image;
-    elements.image.alt = project.title;
     elements.category.textContent = project.category;
     elements.title.textContent = project.title;
     
@@ -64,7 +61,7 @@ export const initProjectModal = async () => {
 
     // Metrics
     elements.metrics.innerHTML = project.metrics.map(metric => 
-      `<li>• ${metric}</li>`
+      `<li>${metric}</li>`
     ).join('');
 
     // Show Modal
