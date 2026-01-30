@@ -310,3 +310,18 @@
     padding: 2rem 0;
   }
 }
+
+/* ==========================================================================
+   OTIMIZAÇÃO DE PERFORMANCE MOBILE
+   Dicas para o navegador priorizar renderização.
+   ========================================================================== */
+@media (max-width: 767px) {
+  .typing-text {
+    /* Promove para camada de composição na GPU */
+    will-change: background-position;
+  }
+  
+  .scroll-indicator {
+    will-change: transform;
+  }
+}

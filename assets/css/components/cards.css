@@ -255,3 +255,30 @@
   height: 16px;
   color: var(--color-accent-primary);
 }
+
+/* ==========================================================================
+   OTIMIZAÇÃO DE PERFORMANCE MOBILE
+   Remove efeitos pesados (sombras, blur) em dispositivos móveis.
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Remove Box Shadow pesado e transformações de hover
+     (Prevenção de repaints desnecessários ao tocar) */
+  .skill-card:hover,
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove Backdrop Filter que é custoso para GPU e causa "travadas" na rolagem */
+  .project-category {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Compensa a falta de blur com um fundo mais sólido e legível */
+    background: rgba(0, 17, 255, 0.9) !important;
+  }
+
+  /* Garante que imagens não tentem fazer scale no mobile */
+  .project-card:hover .project-image img {
+    transform: none !important;
+  }
+}

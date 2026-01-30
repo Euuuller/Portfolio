@@ -184,3 +184,31 @@
    */
   text-shadow: 0 0 30px var(--color-math-text-bright);
 }
+
+/* ==========================================================================
+   OTIMIZAÇÃO DE PERFORMANCE MOBILE
+   Simplifica drasticamente o fundo para dispositivos móveis.
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Remove as camadas de Grid pesadas (gradientes repetidos + máscaras) */
+  .math-background::before,
+  .math-background::after {
+    display: none !important;
+    background-image: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+
+  /* Define um fundo mais simples e estático para o container */
+  .math-background {
+    /* Mantém apenas o gradiente base, sem efeitos de "vidro" ou grid complexo */
+    background: var(--color-bg-primary); 
+    /* Opcional: Um gradiente muito leve se quiser manter a estética sem custo */
+    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+  }
+
+  /* Remove elementos flutuantes decorativos (fórmulas) */
+  .math-formula {
+    display: none !important;
+  }
+}
