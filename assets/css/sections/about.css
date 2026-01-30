@@ -153,9 +153,11 @@
    CARDS DE ESTATÍSTICAS (STATS)
    Grid com cartões informativos com efeito de vidro.
    -------------------------------------------------------------------------- */
+/* Grid Padrão (Mobile First) */
 .about-stats {
   display: grid;
-  grid-template-columns: 1fr; /* Uma coluna no mobile */
+  /* Alterado de 1fr para 3 colunas mesmo no mobile, como solicitado */
+  grid-template-columns: repeat(3, 1fr); 
   gap: var(--space-6);
   margin-bottom: var(--space-12);
 }
@@ -169,8 +171,8 @@
 
 /* Estilo Individual do Card */
 .stat-card {
-  /* Efeito de Vidro (Glassmorphism) para modo claro */
-  background: rgba(255, 255, 255, 0.7); 
+  /* Efeito de Vidro removido para igualar Meus Projetos */
+  background: transparent !important; 
   
   /* Filtro de desfoque no fundo */
   backdrop-filter: blur(12px);
@@ -195,8 +197,8 @@
 
 /* Adaptação para Modo Escuro */
 [data-theme="dark"] .stat-card {
-  /* Fundo com opacidade reduzida (0.1) para diminuir o cinza */
-  background: rgba(5, 5, 5, 0.1); 
+  /* Fundo transparente */
+  background: transparent !important; 
   border-color: rgba(255, 255, 255, 0.05); 
 }
 
@@ -364,4 +366,45 @@
 @keyframes pulse {
   0%, 100% { opacity: 0.2; } /* Início e fim: opacidade baixa */
   50% { opacity: 0.3; }      /* Meio: opacidade levemente maior */
+}
+
+/* Mobile: Ocultar imagem de perfil */
+@media (max-width: 767px) {
+  .about-image-wrapper {
+    display: none;
+  }
+
+  /* Ajuste Fino para Mobile: 3 colunas compactas */
+  .about-stats {
+    gap: var(--space-2); /* Reduz gap para caber na tela */
+  }
+
+  .stat-card {
+    padding: var(--space-3); /* Reduz padding interno */
+  }
+  
+  .stat-icon-wrapper {
+    margin-bottom: var(--space-1); /* Reduz muito o espaço abaixo do ícone */
+  }
+
+  .stat-title {
+    display: block; /* Traz o título de volta! */
+    font-size: 0.55rem; /* Texto bem pequeno para caber */
+    margin-bottom: 2px;
+    opacity: 0.9;
+    white-space: nowrap; /* Evita quebra de linha no título se possível */
+  }
+  
+  .stat-subtitle {
+     display: block; 
+     font-size: 0.7rem; 
+     color: var(--color-text-primary);
+     line-height: 1.1;
+     font-weight: bold; /* Destaque para o número/valor */
+  }
+  
+  .stat-icon {
+    width: 1.25rem; /* Ícone levemente menor para ganhar espaço */
+    height: 1.25rem;
+  }
 }

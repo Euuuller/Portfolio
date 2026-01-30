@@ -239,17 +239,18 @@
     justify-content: center;
   }
   
-  /* Reduz tamanhos de fonte no mobile */
+  /* Aumenta tamanhos de fonte no mobile (Solicitado) */
   .hero-greeting {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl); /* Aumentado de lg para xl */
   }
   
   .hero-name {
-    font-size: var(--text-2xl);
+    font-size: 2.5rem; /* Aumentado significativamente para destaque */
+    line-height: 1.1;
   }
   
   .hero-role {
-    font-size: var(--text-lg);
+    font-size: 2.2rem; /* Aumentado ainda mais o efeito de digitação */
   }
   
   /* Botões ocupam 100% da largura (empilhados) */
@@ -266,7 +267,7 @@
 /* Mobile Pequeno (abaixo de 480px) */
 @media (max-width: 479px) {
   .hero-name {
-    font-size: var(--text-xl); /* Ainda menor para telas muito estreitas */
+    font-size: 2rem; /* Mantém grande mesmo em telas pequenas */
   }
 }
 

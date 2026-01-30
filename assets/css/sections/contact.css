@@ -38,6 +38,7 @@
    ITEM DE CONTATO (Card Individual)
    Estilo para cada bloco (Email, Localização, etc.).
    -------------------------------------------------------------------------- */
+/* ... */
 .contact-item {
   display: flex; /* Alinha ícone e texto lado a lado */
   align-items: center; /* Centraliza verticalmente */
@@ -45,17 +46,21 @@
   padding: var(--space-4);
   
   /* Cores do Design System */
-  background: var(--color-bg-card);
+  background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   
   transition: all var(--transition-base); /* Suaviza animações de hover */
 }
 
+
+
+/* Interatividade: Hover no item */
 /* Interatividade: Hover no item */
 .contact-item:hover {
   border-color: var(--color-border-hover); /* Realça a borda */
-  transform: translateX(4px); /* Move levemente para a direita */
+  transform: scale(1.02); /* Escala suave em vez de mover para direita */
+  background: rgba(255, 255, 255, 0.03); /* Fundo sutil ao passar o mouse */
   color: inherit; /* Mantém a cor do texto herança */
 }
 
@@ -72,8 +77,9 @@
   align-items: center;
   justify-content: center;
   
-  background: var(--color-bg-tertiary); /* Fundo sutil */
-  border-radius: var(--radius-lg);
+  background: transparent; /* Remove fundo cinza/terciário */
+  border: 1px solid var(--color-border); /* Adiciona borda sutil ao redor do ícone */
+  border-radius: 50%; /* Torna o ícone perfeitamente circular */
   color: var(--color-accent-primary); /* Cor do ícone */
   
   /* Impede que o ícone encolha se o texto for muito grande */
@@ -84,6 +90,46 @@
 .contact-icon svg {
   width: 20px;
   height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   CORES PERSONALIZADAS DOS ÍCONES (Por ordem: Email, LinkedIn, GitHub, Medium)
+   -------------------------------------------------------------------------- */
+
+/* Email: Vermelho/Laranja */
+.contact-item:nth-child(1) .contact-icon {
+  color: #ef4444; /* Vermelho vivo */
+  border-color: rgba(239, 68, 68, 0.2); /* Borda vermelha translúcida */
+  background: rgba(239, 68, 68, 0.05); /* Fundo vermelho ultra suave */
+}
+
+/* LinkedIn: Azul Linkedln */
+.contact-item:nth-child(2) .contact-icon {
+  color: #0077b5; /* Azul oficial LinkedIn */
+  border-color: rgba(0, 119, 181, 0.2);
+  background: rgba(0, 119, 181, 0.05);
+}
+
+/* GitHub: Branco/Cinza Claro */
+.contact-item:nth-child(3) .contact-icon {
+  color: #f3f4f6; /* Branco acinzentado (Modo Escuro Padrão) */
+  border-color: rgba(243, 244, 246, 0.2);
+  background: rgba(243, 244, 246, 0.05);
+}
+
+/* Modo Claro e Leitura: GitHub Preto */
+[data-theme="light"] .contact-item:nth-child(3) .contact-icon,
+:root:not([data-theme="dark"]) .contact-item:nth-child(3) .contact-icon {
+  color: #000000; /* Preto forte */
+  border-color: rgba(0, 0, 0, 0.2); /* Borda escura translúcida */
+  background: rgba(0, 0, 0, 0.05); /* Fundo escuro suave */
+}
+
+/* Medium: Laranja/Marrom */
+.contact-item:nth-child(4) .contact-icon {
+  color: #f97316; /* Laranja vibrante */
+  border-color: rgba(249, 115, 22, 0.2);
+  background: rgba(249, 115, 22, 0.05);
 }
 
 /* --------------------------------------------------------------------------
@@ -115,7 +161,7 @@
    Estilo da caixa que envolve os campos de input.
    -------------------------------------------------------------------------- */
 .contact-form {
-  background: var(--color-bg-card);
+  background: transparent; /* Alterado para transparente */
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);

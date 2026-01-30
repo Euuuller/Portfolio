@@ -27,7 +27,22 @@
 }
 
 .heart {
-  color: #ef4444;
+  color: #ef4444; /* Vermelho forte */
+  font-size: 1.1em; /* Levemente maior */
+  animation: pulse-red 1.5s infinite; /* Batida do coração */
+  display: inline-block;
+}
+
+.coffee-icon {
+  color: #f97316; /* Laranja café */
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
 /* ============================================

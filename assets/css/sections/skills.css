@@ -77,7 +77,7 @@
   justify-content: center; /* Centraliza conteúdo verticalmente */
   
   padding: var(--space-1);
-  background: var(--color-bg-card);
+  background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   
@@ -91,8 +91,8 @@
 /* Interatividade: Hover no Card (Efeito Glassy/Glow solicitado) */
 .skill-card:hover {
   transform: translateY(-4px); 
-  /* Fundo azulado levemente transparente (Glassmorphism sutil) */
-  background: rgba(59, 130, 246, 0.1); 
+  /* Fundo removido para consistência */
+  background: transparent; 
   /* Borda mais clara e visível para destacar o card */
   border-color: rgba(59, 130, 246, 0.3);
   /* Sombra interna para dar profundidade (opcional, mas realça o efeito) */
