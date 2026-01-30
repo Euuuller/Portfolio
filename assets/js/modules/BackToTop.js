@@ -7,15 +7,31 @@ export const initBackToTop = () => {
   const backToTop = document.getElementById('backToTop');
   if (!backToTop) return;
 
+  let isVisible = false;
+  let ticking = false;
+
   const toggleVisibility = () => {
-    if (window.scrollY > 500) {
+    const currentScrollY = window.scrollY;
+    
+    // Optimized: Only touch DOM if state needs to change
+    if (currentScrollY > 500 && !isVisible) {
       backToTop.classList.add('visible');
-    } else {
+      isVisible = true;
+    } else if (currentScrollY <= 500 && isVisible) {
       backToTop.classList.remove('visible');
+      isVisible = false;
+    }
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(toggleVisibility);
+      ticking = true;
     }
   };
 
-  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   backToTop.addEventListener('click', () => {
     window.scrollTo({

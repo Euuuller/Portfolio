@@ -86,11 +86,11 @@
 @keyframes glow {
   0%, 100% {
     opacity: 0.3;
-    filter: blur(40px);
+    filter: blur(20px);
   }
   50% {
     opacity: 0.5;
-    filter: blur(50px);
+    filter: blur(25px);
   }
 }
 

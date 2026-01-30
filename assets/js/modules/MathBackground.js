@@ -230,8 +230,8 @@ export const initMathBackground = () => {
   // Wrapper for formulas
   const formulasWrapper = document.createElement('div');
   formulasWrapper.className = 'absolute inset-0 overflow-hidden pointer-events-none select-none z-0';
-  container.appendChild(formulasWrapper);
-
+  
+  const fragment = document.createDocumentFragment();
   const isMobile = window.innerWidth < 768;
 
   formulas.forEach(data => {
@@ -281,6 +281,9 @@ export const initMathBackground = () => {
     if (data.suffix) html += data.suffix;
     
     el.innerHTML = html;
-    formulasWrapper.appendChild(el);
+    fragment.appendChild(el);
   });
+  
+  formulasWrapper.appendChild(fragment);
+  container.appendChild(formulasWrapper);
 };

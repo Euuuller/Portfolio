@@ -10,53 +10,76 @@ export const initNavigation = () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   const sections = document.querySelectorAll('section[id]');
-
-  let lastScrollY = window.scrollY;
+  
+  // State tracking to minimize DOM writes
+  let isScrolled = false;
   let ticking = false;
 
-  // Header scroll effect
-  const handleScroll = () => {
+  // 1. Optimized Header Scroll Effect
+  const onScroll = () => {
     const currentScrollY = window.scrollY;
-
-    // Add/remove scrolled class
-    if (currentScrollY > 50) {
+    // Only write to DOM if state changes
+    if (currentScrollY > 50 && !isScrolled) {
       header?.classList.add('scrolled');
-    } else {
+      isScrolled = true;
+    } else if (currentScrollY <= 50 && isScrolled) {
       header?.classList.remove('scrolled');
+      isScrolled = false;
     }
-
-    // Update active nav link
-    updateActiveNavLink();
-
-    lastScrollY = currentScrollY;
     ticking = false;
   };
 
-  const updateActiveNavLink = () => {
-    const scrollPosition = window.scrollY + 100;
+  const requestScrollUpdate = () => {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  };
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+  // 2. High Performance ScrollSpy using IntersectionObserver
+  // This completely removes the need to calculate offsets on every scroll event
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Active when section is in middle of viewport
+    threshold: 0
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        
+        // Update Desktop Links
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
+          if (link.getAttribute('href') === `#${id}`) {
             link.classList.add('active');
           }
+        });
+        
+        // Mobile links update (optional, usually closed)
+        mobileNavLinks.forEach(link => {
+           // Mobile menu usually closes on click, but good to sync state
+           if (link.getAttribute('href') === `#${id}`) {
+             // Logic if needed
+           }
         });
       }
     });
   };
 
-  // Smooth scroll
-  function smoothScroll(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  sections.forEach(section => observer.observe(section));
 
+  // 3. Smooth Scroll \u0026 Mobile Menu Handling
+  const smoothScroll = (e) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+    
+    const targetSection = document.querySelector(targetId);
     if (targetSection) {
       const headerHeight = header?.offsetHeight || 80;
       const targetPosition = targetSection.offsetTop - headerHeight;
@@ -66,19 +89,14 @@ export const initNavigation = () => {
         behavior: 'smooth'
       });
 
-      // Close mobile menu
       closeMobileMenu();
     }
-  }
+  };
 
-  // Mobile menu toggle
+  // Mobile Menu Logic
   const toggleMobileMenu = () => {
     const isOpen = mobileToggle?.classList.contains('active');
-    if (isOpen) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
+    isOpen ? closeMobileMenu() : openMobileMenu();
   };
 
   const openMobileMenu = () => {
@@ -97,42 +115,24 @@ export const initNavigation = () => {
     document.body.style.overflow = '';
   };
 
-  // Request animation frame for scroll
-  const requestScrollUpdate = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
-  };
-
   // Event Listeners
-  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', smoothScroll);
-  });
-
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', smoothScroll);
-  });
-
+  navLinks.forEach(link => link.addEventListener('click', smoothScroll));
+  mobileNavLinks.forEach(link => link.addEventListener('click', smoothScroll));
   mobileToggle?.addEventListener('click', toggleMobileMenu);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mobileMenu?.classList.contains('active') && 
+        !mobileMenu.contains(e.target) && 
+        !mobileToggle?.contains(e.target)) {
       closeMobileMenu();
     }
   });
 
-  document.addEventListener('click', (e) => {
-    if (mobileMenu?.classList.contains('active')) {
-      if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        closeMobileMenu();
-      }
-    }
-  });
-
-  // Initial scroll check
-  handleScroll();
+  // Initial Check
+  onScroll();
 };
 
