@@ -12,8 +12,9 @@ import { initTabManager } from './modules/TabManager.js';
 import { initProjectFilter } from './modules/ProjectFilter.js';
 import { initScrollReveal } from './modules/ScrollReveal.js';
 import { initContactForm } from './modules/ContactForm.js';
+import { initGithubStats } from './modules/GithubStats.js';
 
-// New Modular Components (Extracted from AppController)
+// Modular Components
 import { initYearUpdater } from './modules/YearUpdater.js';
 import { initBackToTop } from './modules/BackToTop.js';
 import { initCVDownload } from './modules/CVDownload.js';
@@ -34,6 +35,7 @@ const initApp = () => {
   initMathBackground();
   initTypingEffect();
   initScrollReveal();
+  initGithubStats();
   
   // Components & Features
   initTabManager();

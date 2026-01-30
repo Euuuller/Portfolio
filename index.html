@@ -310,76 +310,57 @@
           <div class="about-content">
             <!-- Imagem de Perfil com efeito de brilho -->
             <div class="about-image-wrapper">
+              <div class="about-glow"></div>
               <div class="about-image">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="./assets/images/profile-CPRGesPq.webp" 
                   alt="Euller Duarte"
                   loading="lazy"
+                  class="profile-img"
                 />
-                <div class="image-glow"></div>
               </div>
             </div>
 
             <div class="about-info">
               <!-- Cards de Estatísticas Rápidas -->
               <div class="about-stats">
-                <!-- Stat Card 1 -->
+                <!-- Stat Card 1: Repositórios (Code Brackets) -->
                 <div class="stat-card">
-                  <div class="stat-icon">
-                    <!-- Ícone SVG -->
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      />
+                  <div class="stat-icon-wrapper">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
                   </div>
-                  <div class="stat-content">
-                    <span class="stat-value">3+</span>
-                    <span class="stat-label">Projetos Públicos</span>
-                  </div>
+                  <h3 class="stat-title">Repositórios</h3>
+                  <p class="stat-subtitle">
+                    <span id="repo-count" class="loading">...</span> Projetos Públicos
+                  </p>
                 </div>
 
-                <!-- Stat Card 2 -->
+                <!-- Stat Card 2: Foco Principal (Target) -->
                 <div class="stat-card">
-                  <div class="stat-icon">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 6v6l4 2" />
+                  <div class="stat-icon-wrapper">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
                     </svg>
                   </div>
-                  <div class="stat-content">
-                    <span class="stat-value">Engenharia</span>
-                    <span class="stat-label">de Dados & BI</span>
-                  </div>
+                  <h3 class="stat-title">Foco Principal</h3>
+                  <p class="stat-subtitle">Engenharia de Dados & BI</p>
                 </div>
 
-                <!-- Stat Card 3 -->
+                <!-- Stat Card 3: Formação (Graduation Cap) -->
                 <div class="stat-card">
-                  <div class="stat-icon">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  <div class="stat-icon-wrapper">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                     </svg>
                   </div>
-                  <div class="stat-content">
-                    <span class="stat-value">Eng. Elétrica</span>
-                    <span class="stat-label">IFMA</span>
-                  </div>
+                  <h3 class="stat-title">Formação</h3>
+                  <p class="stat-subtitle">Eng. Elétrica (IFMA)</p>
                 </div>
               </div>
 
@@ -387,53 +368,38 @@
               <div class="about-text">
                 <p>
                   Sou graduando em
-                  <strong
-                    >Engenharia Elétrica pelo Instituto Federal do Maranhão
-                    (IFMA)</strong
-                  >, transformando dados brutos em inteligência de negócio.
+                  <strong class="text-strong">Engenharia Elétrica pelo Instituto Federal do Maranhão (IFMA)</strong>, transformando dados brutos em inteligência de negócio.
                 </p>
                 <p>
                   Ao contrário da análise tradicional, utilizo engenharia de
                   software para criar soluções escaláveis. Meu foco está na
                   intersecção entre
-                  <span class="text-highlight">Data Science</span> e
-                  <span class="text-highlight">Desenvolvimento</span>, aplicando
+                  <span class="text-highlight-blue">Data Science</span> e
+                  <span class="text-highlight-purple">Desenvolvimento</span>, aplicando
                   Python e SQL para análises Preditivas e Prescritivas.
                 </p>
               </div>
 
-              <!-- Botões de Ação (Download CV e Github) -->
+              <!-- Botões de Ação -->
               <div class="about-actions">
-                <button class="btn btn-outline" id="btnDownloadCV">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
+                <button class="btn btn-primary" id="btnDownloadCV">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
-                  <span>Baixar Currículo</span>
+                  Baixar Currículo
                 </button>
                 <a
                   href="https://github.com/Euuuller"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="btn btn-ghost"
+                  class="btn btn-outline"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    />
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
-                  <span>Ver GitHub</span>
+                  Ver GitHub
                 </a>
               </div>
             </div>
