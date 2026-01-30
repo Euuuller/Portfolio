@@ -46,6 +46,12 @@
   .section-subtitle {
     font-size: var(--text-base);
   }
+  
+  /* Mobile Performance Optimization */
+  .section {
+    content-visibility: auto; /* Browser rendering optimization */
+    contain-intrinsic-size: 500px; /* Placeholder size estimate */
+  }
 }
 
 /* Small Mobile (below 480px) */

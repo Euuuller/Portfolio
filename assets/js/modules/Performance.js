@@ -10,7 +10,7 @@ export const initPerformanceMonitoring = () => {
       setTimeout(() => {
         const perfData = performance.timing;
         const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page load time: ${pageLoadTime}ms`);
+        // console.log(`Page load time: ${pageLoadTime}ms`);
       }, 0);
     });
   }
