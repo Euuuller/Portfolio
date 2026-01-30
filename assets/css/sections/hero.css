@@ -235,13 +235,13 @@
     /* Ajusta padding para telas menores */
     padding: calc(var(--header-height) + var(--space-4)) var(--space-4) var(--space-20);
     
-    min-height: 100vh; /* Mantém altura total */
+    min-height: 100svh; /* Usa "Small Viewport Height" para evitar corte por barras do navegador */
     justify-content: center;
   }
   
   /* Aumenta tamanhos de fonte no mobile (Solicitado) */
   .hero-greeting {
-    font-size: var(--text-xl); /* Aumentado de lg para xl */
+    font-size: var(--text-2xl); /* Aumentado ainda mais */
   }
   
   .hero-name {
@@ -252,7 +252,7 @@
   /* Garante que a seta apareça acima do fundo */
   .scroll-indicator {
     z-index: 10; 
-    bottom: var(--space-8); /* Sobe um pouco a seta */
+    bottom: var(--space-12); /* Sobe mais ainda a seta (aprox 48px) */
   }
   
   .hero-role {
