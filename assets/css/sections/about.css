@@ -374,37 +374,8 @@
     display: none;
   }
 
-  /* Ajuste Fino para Mobile: 3 colunas compactas */
+  /* Ocultar cards de estatísticas no mobile para melhorar desempenho */
   .about-stats {
-    gap: var(--space-2); /* Reduz gap para caber na tela */
-  }
-
-  .stat-card {
-    padding: var(--space-3); /* Reduz padding interno */
-  }
-  
-  .stat-icon-wrapper {
-    margin-bottom: var(--space-1); /* Reduz muito o espaço abaixo do ícone */
-  }
-
-  .stat-title {
-    display: block; /* Traz o título de volta! */
-    font-size: 0.55rem; /* Texto bem pequeno para caber */
-    margin-bottom: 2px;
-    opacity: 0.9;
-    white-space: nowrap; /* Evita quebra de linha no título se possível */
-  }
-  
-  .stat-subtitle {
-     display: block; 
-     font-size: 0.7rem; 
-     color: var(--color-text-primary);
-     line-height: 1.1;
-     font-weight: bold; /* Destaque para o número/valor */
-  }
-  
-  .stat-icon {
-    width: 1.25rem; /* Ícone levemente menor para ganhar espaço */
-    height: 1.25rem;
+    display: none;
   }
 }

@@ -8,22 +8,23 @@
 
 :root,
 [data-theme="dark"] {
-  /* Background Colors with Gradient */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #0d0d0d;
-  --color-bg-tertiary: #141414;
-  --color-bg-card: rgba(20, 20, 20, 0.8);
-  --color-bg-hover: rgba(255, 255, 255, 0.05);
+  /* Background Colors with Gradient (TESTE: Cores Reais/Mais Escuras) */
+  --color-bg-primary: #050505; /* Mais escuro que #0a0a0a */
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-tertiary: #111111;
+  --color-bg-card: rgba(10, 10, 10, 0.8);
+  --color-bg-hover: rgba(255, 255, 255, 0.03);
   
-  /* Gradient Backgrounds */
-  --gradient-bg: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0a 50%, #000000 100%);
-  --gradient-bg-section: radial-gradient(ellipse at center, #16162a 0%, #0a0a0a 70%);
-  --gradient-grid: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  /* Gradient Backgrounds (Ajuste Fino para imitar o site) */
+  /* Topo menos azulado, mais 'deep space' */
+  --gradient-bg: radial-gradient(ellipse at top, #0f1016 0%, #050505 50%, #000000 100%);
+  --gradient-bg-section: radial-gradient(ellipse at center, #0a0a10 0%, #050505 70%);
+  --gradient-grid: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
   
   /* Text Colors */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a0a0a0;
-  --color-text-tertiary: #666666;
+  --color-text-secondary: #a3a3a3; /* Levemente mais claro para contraste */
+  --color-text-tertiary: #737373;
   
   /* Accent Colors */
   --color-accent-primary: #3b82f6;
@@ -31,12 +32,12 @@
   --color-accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   
   /* Borders */
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.15);
+  --color-border: rgba(255, 255, 255, 0.05); /* Mais sutil */
+  --color-border-hover: rgba(255, 255, 255, 0.1);
   
-  /* Grid Background - More visible */
-  --color-grid-line: rgba(59, 130, 246, 0.25); /* Aumentado de 0.15 para 0.25 */
-  --color-grid-line-strong: rgba(139, 92, 246, 0.40); /* Aumentado de 0.25 para 0.40 */
+  /* Grid Background - Ajuste de Opacidade (Mais visível) */
+  --color-grid-line: rgba(59, 130, 246, 0.3); /* Aumentado para 0.3 (30%) */
+  --color-grid-line-strong: rgba(139, 92, 246, 0.5); /* Aumentado para 0.5 (50%) */
   
   /* Math Background Colors */
   --color-math-text: rgba(59, 130, 246, 0.15);
