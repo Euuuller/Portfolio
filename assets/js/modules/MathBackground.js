@@ -251,36 +251,38 @@ export const initMathBackground = () => {
   // z-0: Mantém no fundo da pilha de camadas (z-index).
   container.className = 'math-background absolute inset-0 overflow-hidden pointer-events-none select-none z-0';
 
-  /**
-   * CAMADA DE RUÍDO (NOISE)
-   * Adiciona uma textura granulada sutil para dar um aspecto mais orgânico e menos "digital chapado".
-   * Usa mix-blend-mode: soft-light para misturar suavemente com a cor de fundo.
-   */
-  const noise = document.createElement('div');
-  noise.style.cssText = `
-    position: absolute;
-    inset: 0;
-    opacity: 0.2;
-    mix-blend-mode: soft-light;
-    background-image: url('https://grainy-gradients.vercel.app/noise.svg'); /* URL externa da textura */
-  `;
-  container.appendChild(noise);
+  // Verifica se é um dispositivo móvel (largura menor que 768px).
+  const isMobile = window.innerWidth < 768;
 
   /**
-   * CAMADA DE GRADE (GRID)
-   * Adiciona um padrão de grade milimetrada muito sutil.
-   * Criação via CSS Gradients evita o carregamento de imagens externas adicionais.
+   * CAMADA DE RUÍDO (NOISE) - Desativada no Mobile para Performance
    */
-  const grid = document.createElement('div');
-  grid.style.cssText = `
-    position: absolute;
-    inset: 0;
-    /* Cria linhas horizontais e verticais usando gradientes */
-    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
-    background-size: 24px 24px; /* Tamanho de cada quadrado da grade */
-  `;
-  container.appendChild(grid);
+  if (!isMobile) {
+    const noise = document.createElement('div');
+    noise.style.cssText = `
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      mix-blend-mode: soft-light;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    `;
+    container.appendChild(noise);
+  }
+
+  /**
+   * CAMADA DE GRADE (GRID) - Desativada no Mobile para Performance
+   */
+  if (!isMobile) {
+    const grid = document.createElement('div');
+    grid.style.cssText = `
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
+    `;
+    container.appendChild(grid);
+  }
 
   // Wrapper (Envoltório) para as fórmulas.
   // Separa as fórmulas das camadas de textura/grade para organização.
@@ -292,8 +294,7 @@ export const initMathBackground = () => {
   // adicionamos tudo ao fragmento na memória e inserimos no DOM de uma só vez no final.
   const fragment = document.createDocumentFragment();
   
-  // Verifica se é um dispositivo móvel (largura menor que 768px).
-  const isMobile = window.innerWidth < 768;
+
 
   // Itera sobre cada configuração de fórmula definida no array 'formulas'
   formulas.forEach(data => {
@@ -345,7 +346,7 @@ export const initMathBackground = () => {
       el.style.color = 'var(--color-text-primary)';
       // Reduz opacidade no mobile para não brigar com o conteúdo principal
       el.style.opacity = isMobile ? '0.05' : (data.style.opacity || '0.05');
-      el.style.mixBlendMode = 'overlay'; // Cria efeito de sobreposição sofisticado
+      el.style.mixBlendMode = isMobile ? 'normal' : 'overlay'; // Desativa blend mode pesado no mobile
     }
 
     /**
