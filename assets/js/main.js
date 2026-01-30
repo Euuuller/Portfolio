@@ -11,6 +11,7 @@ import { initThemeManager } from './modules/ThemeManager.js';
 import { initTabManager } from './modules/TabManager.js';
 import { initSkillsLoader } from './modules/SkillsLoader.js';
 import { initProjectFilter } from './modules/ProjectFilter.js';
+import { initProjectModal } from './modules/ProjectModal.js';
 import { initScrollReveal } from './modules/ScrollReveal.js';
 import { initContactForm } from './modules/ContactForm.js';
 import { initGithubStats } from './modules/GithubStats.js';
@@ -42,6 +43,7 @@ const initApp = () => {
   initSkillsLoader();
   initTabManager();
   initProjectFilter();
+  initProjectModal();
   initContactForm();
   initCVDownload();
   initBackToTop();

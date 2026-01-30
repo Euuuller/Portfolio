@@ -1,0 +1,116 @@
+[
+  {
+    "id": "segmentacao-rfm",
+    "title": "Segmentação de Clientes (RFM)",
+    "category": "Analytics",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    "tags": ["Python", "Pandas", "Power BI", "Clustering"],
+    "links": {
+      "demo": "#",
+      "repo": "https://github.com/Euuuller/rfm-analysis"
+    },
+    "challenge": "A equipe de marketing realizava campanhas genéricas para toda a base de clientes, resultando em baixo engajamento e alto custo de aquisição (CAC). Faltava clareza sobre quais clientes eram VIPs, quais estavam em risco de churn e quais eram novos.",
+    "solution": "Desenvolvi um algoritmo de clusterização (K-Means) utilizando a metodologia RFM (Recência, Frequência, Monetário). O processo envolveu limpeza de dados com Pandas, normalização e aplicação do modelo. Os resultados foram exportados para um dashboard no Power BI para visualização estratégica.",
+    "impact": "Identificação de 5 clusters distintos. A segmentação permitiu campanhas personalizadas que aumentaram a taxa de conversão em 15% e recuperaram 8% dos clientes inativos no primeiro mês.",
+    "metrics": [
+      "1.5k Registros Analisados",
+      "5 Clusters Identificados",
+      "+15% Taxa de Conversão"
+    ]
+  },
+  {
+    "id": "dashboard-vendas",
+    "title": "Dashboard de Vendas",
+    "category": "Dashboards",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    "tags": ["Power BI", "DAX", "SQL", "Data Modeling"],
+    "links": {
+      "demo": "#",
+      "repo": "#"
+    },
+    "challenge": "A gestão comercial dependia de relatórios estáticos em planilhas Excel, dificultando a visão em tempo real do desempenho de vendas por região e vendedor. A tomada de decisão era lenta e baseada em dados defasados.",
+    "solution": "Construção de um Data Warehouse otimizado e desenvolvimento de um Dashboard interativo no Power BI. Implementação de medidas DAX complexas para cálculos de ticket médio, crescimento MoM (Month over Month) e projeção de metas.",
+    "impact": "Redução de 90% no tempo de geração de relatórios. A gestão passou a acompanhar KPIs em tempo real, permitindo ajustes rápidos na estratégia de vendas durante o mês vigente.",
+    "metrics": [
+      "KPIs em Tempo Real",
+      "Análise Geográfica Detalhada",
+      "-90% Tempo de Relatório"
+    ]
+  },
+  {
+    "id": "deteccao-fraudes",
+    "title": "Detecção de Fraudes (ML)",
+    "category": "Machine Learning",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    "tags": ["Python", "Scikit-Learn", "XGBoost", "API Flask"],
+    "links": {
+      "demo": "#",
+      "repo": "https://github.com/Euuuller/fraud-detection"
+    },
+    "challenge": "O sistema atual de prevenção a fraudes gerava muitos falsos positivos, bloqueando transações legítimas e causando insatisfação nos clientes, além de não detectar padrões de fraude mais complexos e recentes.",
+    "solution": "Treinamento de um modelo de classificação utilizando XGBoost em um dataset desbalanceado (técnicas de SMOTE). O modelo foi implantado via API (Flask) para pontuar transações em tempo real com baixa latência.",
+    "impact": "Melhoria de 25% na precisão da detecção em comparação com o sistema baseado em regras. Redução drástica de falsos positivos, garantindo uma experiência de compra fluida para clientes legítimos.",
+    "metrics": [
+      "95% de Precisão",
+      "2% Falsos Positivos",
+      "<100ms Latência/Req"
+    ]
+  },
+  {
+    "id": "analise-sentimento",
+    "title": "Análise de Sentimento NLP",
+    "category": "Machine Learning",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+    "tags": ["Python", "NLTK", "TensorFlow", "NLP"],
+    "links": {
+      "demo": "#",
+      "repo": "https://github.com/Euuuller/sentiment-analysis"
+    },
+    "challenge": "A monitorização manual de feedbacks de produtos em e-commerces era inviável dado o volume de dados. A empresa perdia insights valiosos sobre a satisfação do cliente e problemas recorrentes.",
+    "solution": "Desenvolvimento de um pipeline de Processamento de Linguagem Natural (NLP) usando NLTK para limpeza e TensorFlow para classificação de sentimentos (Positivo, Negativo, Neutro).",
+    "impact": "Automatização de 100% da análise de reviews. A empresa conseguiu identificar e resolver um problema crítico de qualidade em um produto específico em menos de 48h.",
+    "metrics": [
+      "Processamento em Batch",
+      "89% Acurácia (F1-Score)",
+      "Insights Automáticos"
+    ]
+  },
+  {
+    "id": "previsao-demanda",
+    "title": "Previsão de Demanda (Time Series)",
+    "category": "Analytics",
+    "image": "https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=600&h=400&fit=crop",
+    "tags": ["Python", "Prophet", "ARIMA", "Streamlit"],
+    "links": {
+      "demo": "#",
+      "repo": "#"
+    },
+    "challenge": "A gestão de estoque da empresa sofria com constantes rupturas e excessos, gerando altos custos operacionais e perda de vendas. As previsões eram baseadas em média simples, ignorando sazonalidade.",
+    "solution": "Implementação de modelo de séries temporais (Facebook Prophet e ARIMA) para prever a demanda futura de produtos chave. Criação de um app em Streamlit para simulação de cenários pelos gestores.",
+    "impact": "Redução de 20% no custo de estoque e diminuição de 15% nas rupturas de produtos de alto giro. Otimização do fluxo de caixa com compras mais assertivas.",
+    "metrics": [
+      "MAPE 8%",
+      "20% Redução Estoque",
+      "Previsão 12 meses"
+    ]
+  },
+  {
+    "id": "churn-prediction",
+    "title": "Churn Prediction (Telecom)",
+    "category": "Machine Learning",
+    "image": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600&h=400&fit=crop",
+    "tags": ["Python", "XGBoost", "Spark", "Big Data"],
+    "links": {
+      "demo": "#",
+      "repo": "#"
+    },
+    "challenge": "Alta taxa de cancelamento de clientes (Churn) em uma operadora de telecom, sem visibilidade antecipada de quais usuários estavam insatisfeitos ou propensos a sair, dificultando ações de retenção.",
+    "solution": "Desenvolvimento de pipeline de Big Data com Spark para processar logs de uso e criação de modelo preditivo com XGBoost. O sistema gera scores diários de risco de churn para cada cliente ativo.",
+    "impact": "Acurácia de 82% na identificação de churners. Ações proativas de retenção baseadas no score reduziram a taxa de cancelamento em 5% no trimestre de implantação.",
+    "metrics": [
+      "82% Recall",
+      "-5% Taxa de Churn",
+      "Pipeline Diário"
+    ]
+  }
+]
