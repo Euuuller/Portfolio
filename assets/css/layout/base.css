@@ -5,6 +5,8 @@
 /* Document */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* ✨ Previne scroll horizontal global */
+  max-width: 100vw;
 }
 
 /* Body with Gradient Background */
@@ -12,7 +14,8 @@ body {
   background: var(--gradient-bg);
   background-attachment: fixed;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* ✨ Previne scroll horizontal */
+  max-width: 100vw; /* ✨ Limita largura máxima */
   transition: background-color var(--transition-base), color var(--transition-base), background var(--transition-base);
 }
 
@@ -119,5 +122,35 @@ textarea {
   .section {
     padding: 2rem 0;
     page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   MOBILE OVERFLOW FIX
+   ============================================ */
+@media (max-width: 767px) {
+  /* ✨ Previne overflow horizontal global */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden !important;
+  }
+  
+  /* ✨ Limita largura de todos os containers */
+  .container,
+  .hero-container,
+  section,
+  main {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* ✨ Esconde scrollbar horizontal completamente */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
   }
 }

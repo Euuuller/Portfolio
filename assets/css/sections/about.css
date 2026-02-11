@@ -368,8 +368,14 @@
   50% { opacity: 0.3; }      /* Meio: opacidade levemente maior */
 }
 
-/* Mobile: Ocultar imagem de perfil */
+/* Mobile: Ajustes de responsividade */
 @media (max-width: 767px) {
+  /* ✨ Reduz padding da seção */
+  .about {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-12);
+  }
+  
   .about-image-wrapper {
     display: none;
   }
@@ -377,5 +383,24 @@
   /* Ocultar cards de estatísticas no mobile para melhorar desempenho */
   .about-stats {
     display: none;
+  }
+  
+  /* ✨ Ajusta texto para mobile */
+  .about-text {
+    font-size: var(--text-base);
+    text-align: left; /* Melhor leitura em mobile */
+    padding: 0 var(--space-2);
+  }
+  
+  /* ✨ Botões empilhados e full-width */
+  .about-actions {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 var(--space-4);
+  }
+  
+  .about-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

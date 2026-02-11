@@ -274,20 +274,35 @@
 @media (max-width: 767px) {
   .hero {
     /* Ajusta padding para telas menores */
-    padding: calc(var(--header-height) + var(--space-4)) var(--space-4) var(--space-20);
+    padding: calc(var(--header-height) + var(--space-8)) var(--space-4) var(--space-12);
     
     min-height: 100svh; /* Usa "Small Viewport Height" para evitar corte por barras do navegador */
     justify-content: center;
+    overflow-x: hidden; /* ✨ Previne scroll horizontal */
   }
   
-  /* Aumenta tamanhos de fonte no mobile (Solicitado) */
+  /* ✨ Container com largura controlada */
+  .hero-container {
+    max-width: 100%;
+    padding: 0 var(--space-2);
+  }
+  
+  /* ✨ Badge menor no mobile */
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: var(--space-1) var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  
+  /* Ajusta tamanhos de fonte no mobile */
   .hero-greeting {
-    font-size: var(--text-2xl); /* Aumentado ainda mais */
+    font-size: var(--text-base); /* ✨ Menor para não quebrar */
   }
   
   .hero-name {
-    font-size: 2.5rem; /* Aumentado significativamente para destaque */
-    line-height: 1.1;
+    font-size: 1.75rem; /* ✨ Reduzido para caber melhor */
+    line-height: 1.2;
+    word-break: break-word; /* ✨ Quebra palavras longas */
   }
 
   .scroll-indicator {
@@ -295,17 +310,31 @@
   }
   
   .hero-role {
-    font-size: 2.2rem; /* Aumentado ainda mais o efeito de digitação */
+    font-size: 1.5rem; /* ✨ Reduzido para melhor legibilidade */
+    gap: 0.05em; /* ✨ Espaçamento menor entre tags */
+  }
+  
+  /* ✨ Tags de código menores */
+  .code-tag {
+    font-size: 0.8em;
+  }
+  
+  /* ✨ Descrição mais compacta */
+  .hero-description {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
   }
   
   /* Botões ocupam 100% da largura (empilhados) */
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--space-3);
   }
   
   .hero-actions .btn {
     width: 100%;
+    font-size: var(--text-base);
   }
 }
 

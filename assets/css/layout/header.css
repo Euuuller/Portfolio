@@ -115,4 +115,19 @@
   .nav-menu {
     display: none;
   }
+  
+  /* ✨ Esconde botões GitHub e CV no mobile para evitar sobrecarga */
+  .btn-icon {
+    display: none !important;
+  }
+  
+  /* Ajusta espaçamento das ações do nav */
+  .nav-actions {
+    gap: var(--space-2);
+  }
+  
+  /* Garante que o theme toggle fique visível */
+  .theme-toggle {
+    display: flex !important;
+  }
 }
