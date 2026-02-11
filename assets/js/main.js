@@ -4,24 +4,28 @@
  */
 
 // Core Modules
-import { initMathBackground } from './modules/MathBackground.js';
-import { initTypingEffect } from './modules/TypingEffect.js';
-import { initNavigation } from './modules/Navigation.js';
-import { initThemeManager } from './modules/ThemeManager.js';
-import { initTabManager } from './modules/TabManager.js';
-import { initSkillsLoader } from './modules/SkillsLoader.js';
-import { initProjectFilter } from './modules/ProjectFilter.js';
-import { initProjectModal } from './modules/ProjectModal.js';
-import { initScrollReveal } from './modules/ScrollReveal.js';
-import { initContactForm } from './modules/ContactForm.js';
-import { initGithubStats } from './modules/GithubStats.js';
+import { initPerformanceMonitoring } from './core/Performance.js';
 
-// Modular Components
-import { initYearUpdater } from './modules/YearUpdater.js';
-import { initBackToTop } from './modules/BackToTop.js';
-import { initCVDownload } from './modules/CVDownload.js';
-import { initPerformanceMonitoring } from './modules/Performance.js';
-import { initPreloader } from './modules/Preloader.js';
+// UI Modules
+import { initMathBackground } from './ui/MathBackground.js';
+import { initTypingEffect } from './ui/TypingEffect.js';
+import { initNavigation } from './ui/Navigation.js';
+import { initThemeManager } from './ui/ThemeManager.js';
+import { initTabManager } from './ui/TabManager.js';
+import { initScrollReveal } from './ui/ScrollReveal.js';
+import { initBackToTop } from './ui/BackToTop.js';
+import { initPreloader } from './ui/Preloader.js';
+
+// Services
+import { initSkillsLoader } from './services/SkillsLoader.js';
+import { initProjectFilter } from './services/ProjectFilter.js';
+import { initProjectModal } from './services/ProjectModal.js';
+import { initContactForm } from './services/ContactForm.js';
+import { initGithubStats } from './services/GithubStats.js';
+import { initCVDownload } from './services/CVDownload.js';
+
+// Utils
+import { initYearUpdater } from './utils/YearUpdater.js';
 
 /**
  * Initialize all application modules

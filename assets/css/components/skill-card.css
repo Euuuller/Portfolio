@@ -1,0 +1,65 @@
+/* ============================================
+   SKILL CARDS - Skills Section
+   ============================================ */
+
+.skill-card {
+  background: transparent !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: transparent;
+}
+
+.skill-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Skill Icon Colors */
+.skill-icon.python { color: #3776ab; }
+.skill-icon.sql { color: #336791; }
+.skill-icon.r { color: #276dc3; }
+.skill-icon.javascript { color: #f7df1e; }
+.skill-icon.html { color: #e34f26; }
+.skill-icon.css { color: #1572b6; }
+.skill-icon.postgres { color: #336791; }
+.skill-icon.mongo { color: #47a248; }
+.skill-icon.sqlite { color: #003b57; }
+
+.skill-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.skill-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Skill Cards - Mobile Optimization */
+@media (max-width: 767px) {
+  .skill-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
