@@ -10,13 +10,14 @@ export const initCVDownload = () => {
   const btnDownloadCV = document.getElementById('btnDownloadCV');
 
   const handleDownload = () => {
-    // Para adicionar o PDF real:
-    // 1. Crie uma pasta 'assets/documents'
-    // 2. Coloque o arquivo 'cv.pdf' lá
-    // 3. Descomente a linha abaixo e remova o toast
-    // window.open('assets/documents/cv.pdf', '_blank');
+    // ✨ Download real do arquivo CV
+    const link = document.createElement('a');
+    link.href = './assets/docs/cv.pdf';
+    link.download = 'Euller_Duarte_CV.pdf';
+    link.click();
     
-    showToast('Currículo em breve disponível para download!', 'info');
+    // Feedback para o usuário
+    showToast('Currículo baixado com sucesso! 📄', 'success');
   };
 
   if (btnCV) {
