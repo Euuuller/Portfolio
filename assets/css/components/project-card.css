@@ -3,17 +3,38 @@
    ============================================ */
 
 .project-card {
-  background: transparent;
-  border: 1px solid var(--color-border);
+  background: rgba(15, 20, 25, 0.4); /* ✨ Transparente para glassmorphism */
+  backdrop-filter: blur(16px) saturate(150%); /* ✨ Glassmorphism premium */
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: var(--color-border-hover);
-  box-shadow: var(--shadow-xl);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(74, 144, 226, 0.1); /* ✨ Glow sutil */
+  background: rgba(15, 20, 25, 0.6); /* ✨ Mais opaco no hover */
+}
+
+/* Light mode glassmorphism */
+[data-theme="light"] .project-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .project-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(37, 99, 235, 0.1);
 }
 
 .project-card.hidden {

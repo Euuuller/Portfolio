@@ -25,25 +25,55 @@
 .btn-primary {
   background: var(--color-accent-primary);
   color: white;
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 4px 14px rgba(74, 144, 226, 0.4),
+    0 0 0 0 rgba(74, 144, 226, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  background: #3a7bc8;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 
+    0 6px 20px rgba(74, 144, 226, 0.5),
+    0 0 0 4px rgba(74, 144, 226, 0.1); /* ✨ Ring effect */
   color: white;
 }
 
 .btn-secondary {
-  background: var(--color-bg-tertiary);
+  background: transparent;
   color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid var(--color-border);
+  backdrop-filter: blur(10px); /* ✨ Glassmorphism sutil */
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: var(--color-bg-hover);
-  border-color: var(--color-border-hover);
+  border-color: var(--color-accent-primary);
+  background: rgba(74, 144, 226, 0.05);
+  transform: translateY(-2px);
   color: var(--color-text-primary);
 }
 

@@ -29,10 +29,31 @@
   text-align: center;
 }
 
+/* Spotlight Effect Premium - Cria profundidade sem peso */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 144, 226, 0.15) 0%,
+    rgba(155, 109, 255, 0.08) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Container interno para limitar a largura do conteúdo */
 .hero-container {
   max-width: 900px;
   margin: 0 auto; /* Centraliza horizontalmente */
+  position: relative;
+  z-index: 1; /* Fica acima do spotlight */
 }
 
 /* --------------------------------------------------------------------------
@@ -92,10 +113,11 @@
      - Mínimo: 2rem
      - Ideal: 5% da largura da tela (5vw)
      - Máximo: 3.5rem */
-  font-size: clamp(2rem, 5vw, 3.5rem); /* Ajustado para caber em telas menores */
+  font-size: clamp(2rem, 5vw, 3.5rem);
   
   font-weight: var(--font-weight-bold);
   line-height: 1.1; /* Entrelinha apertada para títulos grandes */
+  letter-spacing: -0.02em; /* ✨ Tracking negativo para títulos grandes - mais sofisticado */
   color: var(--color-text-primary);
   margin-top: var(--space-2);
 }
@@ -112,6 +134,8 @@
   
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-6);
+  letter-spacing: -0.01em; /* ✨ Mais compacto e premium */
+  line-height: 1.2; /* ✨ Melhor espaçamento */
   
   /* Altura mínima reservada para evitar layout shift (pulo) durante carregamento */
   min-height: 1.5em;
@@ -119,20 +143,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2em;
+  gap: 0.1em; /* ✨ Reduzido para melhor espaçamento com tags */
 }
 
-/* Texto com Gradiente Arco-íris */
+/* Texto com Gradiente Blue-Purple (Profissional) */
 .typing-text {
-  /* Define o gradiente linear com 6 cores (Roxo ao Vermelho) */
+  /* Define o gradiente Blue-Purple harmonioso com a paleta do site */
   background: linear-gradient(
     to right,
-    #240b36, /* Deep Purple */
-    #440d35, /* Dark Plum */
-    #640f34, /* Plum */
-    #831133, /* Dark Red */
-    #a31232, /* Deep Crimson */
-    #c31432  /* Bright Crimson */
+    #4a90e2,  /* Blue (accent primary) */
+    #7c3aed,  /* Purple */
+    #9b6dff,  /* Light purple (accent secondary) */
+    #4a90e2   /* Blue novamente (loop suave) */
   );
   
   /* Aplica o gradiente Apenas ao texto (Mágica do CSS moderno) */
@@ -146,13 +168,30 @@
   background-size: 200% auto;
   
   /* Anima o fundo movendo-o horizontalmente */
-  animation: rainbow 5s linear infinite;
+  animation: rainbow 6s linear infinite;
 }
 
 /* Keyframes para mover o gradiente */
 @keyframes rainbow {
   0% { background-position: 0% 50%; }   /* Posição inicial */
   100% { background-position: 100% 50%; } /* Posição final (deslocado) */
+}
+
+/* ✨ Tags de Código - Cores por Tema */
+.code-tag {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--color-text-primary); /* Branco no dark, preto no light */
+  opacity: 0.9;
+}
+
+.code-tag-open {
+  margin-right: 0.15em;
+}
+
+.code-tag-close {
+  margin-left: 0.15em;
 }
 
 /* Cursor piscante (|) */
@@ -168,6 +207,8 @@
   color: var(--color-text-secondary);
   max-width: 600px; /* Limita largura para leitura confortável */
   margin: 0 auto var(--space-8);
+  line-height: 1.7; /* ✨ Aumentado para melhor leitura */
+  letter-spacing: 0.01em; /* ✨ Levemente espaçado para clareza */
 }
 
 /* --------------------------------------------------------------------------

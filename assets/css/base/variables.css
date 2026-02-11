@@ -3,104 +3,103 @@
    ============================================ */
 
 /* ============================================
-   DARK THEME - DEFAULT (Original Site Style)
+   DARK THEME - RICH NAVY (Premium)
    ============================================ */
 
 :root,
 [data-theme="dark"] {
-  /* Background Colors with Gradient (TESTE: Cores Reais/Mais Escuras) */
-  --color-bg-primary: #050505; /* Mais escuro que #0a0a0a */
-  --color-bg-secondary: #0a0a0a;
-  --color-bg-tertiary: #111111;
-  --color-bg-card: rgba(10, 10, 10, 0.8);
-  --color-bg-hover: rgba(255, 255, 255, 0.03);
+  /* Background Colors - Rich Navy com profundidade */
+  --color-bg-primary: #0a0e1a;      /* Rich Black com toque navy */
+  --color-bg-secondary: #0f1419;    /* Slate muito escuro */
+  --color-bg-tertiary: #151b26;     /* Navy profundo */
+  --color-bg-card: rgba(15, 20, 25, 0.85);
+  --color-bg-hover: rgba(255, 255, 255, 0.04);
   
-  /* Gradient Backgrounds (Ajuste Fino para imitar o site) */
-  /* Topo menos azulado, mais 'deep space' */
-  --gradient-bg: radial-gradient(ellipse at top, #0f1016 0%, #050505 50%, #000000 100%);
-  --gradient-bg-section: radial-gradient(ellipse at center, #0a0a10 0%, #050505 70%);
-  --gradient-grid: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  /* Gradient Backgrounds - Premium depth */
+  --gradient-bg: radial-gradient(ellipse at top, #141b2d 0%, #0a0e1a 50%, #050810 100%);
+  --gradient-bg-section: radial-gradient(ellipse at center, #0f1419 0%, #0a0e1a 70%);
+  --gradient-grid: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(155, 109, 255, 0.05) 100%);
   
-  /* Text Colors */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #a3a3a3; /* Levemente mais claro para contraste */
-  --color-text-tertiary: #737373;
+  /* Text Colors - Melhor legibilidade */
+  --color-text-primary: #f8f9fa;    /* Off-white suave */
+  --color-text-secondary: #b4bcc8;  /* Cinza azulado (WCAG AAA) */
+  --color-text-tertiary: #7d8694;   /* Cinza médio */
   
-  /* Accent Colors */
-  --color-accent-primary: #3b82f6;
-  --color-accent-secondary: #8b5cf6;
-  --color-accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  /* Accent Colors - Refinados */
+  --color-accent-primary: #4a90e2;  /* Blue mais suave */
+  --color-accent-secondary: #9b6dff; /* Purple vibrante */
+  --color-accent-gradient: linear-gradient(135deg, #4a90e2 0%, #9b6dff 100%);
   
-  /* Borders */
-  --color-border: rgba(255, 255, 255, 0.05); /* Mais sutil */
-  --color-border-hover: rgba(255, 255, 255, 0.1);
+  /* Borders - Sutis */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
   
-  /* Grid Background - Ajuste de Opacidade (Mais visível) */
-  --color-grid-line: rgba(59, 130, 246, 0.3); /* Aumentado para 0.3 (30%) */
-  --color-grid-line-strong: rgba(139, 92, 246, 0.5); /* Aumentado para 0.5 (50%) */
+  /* Grid Background - Mais sutil e balanceado */
+  --color-grid-line: rgba(74, 144, 226, 0.08);
+  --color-grid-line-strong: rgba(155, 109, 255, 0.14);
   
   /* Math Background Colors */
-  --color-math-text: rgba(59, 130, 246, 0.15);
-  --color-math-text-bright: rgba(139, 92, 246, 0.25);
+  --color-math-text: rgba(74, 144, 226, 0.12);
+  --color-math-text-bright: rgba(155, 109, 255, 0.20);
   
   /* Status Colors */
   --color-success: #22c55e;
   --color-error: #ef4444;
   --color-warning: #f59e0b;
   
-  /* Shadows */
+  /* Shadows - Profundidade premium */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+  --shadow-glow: 0 0 40px rgba(74, 144, 226, 0.25);
 }
 
 /* ============================================
-   LIGHT THEME
+   LIGHT THEME - WARM CREAM (Premium)
    ============================================ */
 
 [data-theme="light"] {
-  /* Background Colors with Gradient */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #fafafa;
-  --color-bg-tertiary: #f5f5f5;
-  --color-bg-card: rgba(255, 255, 255, 0.9);
-  --color-bg-hover: rgba(0, 0, 0, 0.03);
+  /* Background Colors - Warm off-white */
+  --color-bg-primary: #fafaf9;      /* Warm off-white */
+  --color-bg-secondary: #f5f5f4;    /* Stone 100 */
+  --color-bg-tertiary: #e7e5e4;     /* Stone 200 */
+  --color-bg-card: rgba(250, 250, 249, 0.92);
+  --color-bg-hover: rgba(0, 0, 0, 0.04);
   
-  /* Gradient Backgrounds */
-  --gradient-bg: radial-gradient(ellipse at top, #f8f9ff 0%, #ffffff 50%, #f0f4ff 100%);
-  --gradient-bg-section: radial-gradient(ellipse at center, #f5f7ff 0%, #ffffff 70%);
-  --gradient-grid: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  /* Gradient Backgrounds - Sutil e quente */
+  --gradient-bg: radial-gradient(ellipse at top, #fefefe 0%, #fafaf9 50%, #f5f3f0 100%);
+  --gradient-bg-section: radial-gradient(ellipse at center, #f5f5f4 0%, #fafaf9 70%);
+  --gradient-grid: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(124, 58, 237, 0.04) 100%);
   
-  /* Text Colors */
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #4a4a68;
-  --color-text-tertiary: #8a8aa3;
+  /* Text Colors - Contraste otimizado */
+  --color-text-primary: #1c1917;    /* Stone 900 */
+  --color-text-secondary: #57534e;  /* Stone 600 (WCAG AAA) */
+  --color-text-tertiary: #78716c;   /* Stone 500 */
   
   /* Accent Colors */
-  --color-accent-primary: #2563eb;
-  --color-accent-secondary: #7c3aed;
+  --color-accent-primary: #2563eb;  /* Blue 600 */
+  --color-accent-secondary: #7c3aed; /* Purple 600 */
   --color-accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
   
   /* Borders */
   --color-border: rgba(0, 0, 0, 0.08);
   --color-border-hover: rgba(0, 0, 0, 0.15);
   
-  /* Grid Background - More visible */
-  --color-grid-line: rgba(59, 130, 246, 0.35); /* Aumentado para melhor visibilidade no claro */
-  --color-grid-line-strong: rgba(139, 92, 246, 0.50); /* Aumentado para destaque no claro */
+  /* Grid Background - Balanceado */
+  --color-grid-line: rgba(37, 99, 235, 0.06);
+  --color-grid-line-strong: rgba(124, 58, 237, 0.10);
   
   /* Math Background Colors */
-  --color-math-text: rgba(59, 130, 246, 0.2);
-  --color-math-text-bright: rgba(139, 92, 246, 0.3);
+  --color-math-text: rgba(37, 99, 235, 0.15);
+  --color-math-text-bright: rgba(124, 58, 237, 0.25);
   
-  /* Shadows */
+  /* Shadows - Suaves */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
+  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.2);
 }
 
 /* ============================================

@@ -89,18 +89,27 @@
     
   /* 
    * Tamanho das Células:
-   * Define que cada quadrado da grade menor terá 40x40 pixels.
+   * Define que cada quadrado da grade menor terá 30x30 pixels.
    */
   background-size: 30px 30px;
   
   /* 
-   * Máscara de Opacidade (Vignette):
-   * Aplica um gradiente de transparência sobre a grade para que ela
-   * não seja uniforme em toda a tela (geralmente mais suave nas bordas).
-   * Webkit prefixo é para compatibilidade com Chrome/Safari.
+   * Máscara de Opacidade Radial - ✨ Fade suave nas bordas:
+   * Aplica um gradiente radial de transparência para que a grade
+   * seja mais visível no centro e desapareça suavemente nas bordas.
    */
-  mask-image: var(--gradient-grid);
-  -webkit-mask-image: var(--gradient-grid);
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
   
   pointer-events: none;
 }
@@ -135,9 +144,19 @@
    */
   background-size: 200px 200px;
   
-  /* Aplica a mesma máscara de suavização */
-  mask-image: var(--gradient-grid);
-  -webkit-mask-image: var(--gradient-grid);
+  /* Aplica a mesma máscara radial de suavização */
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
   
   pointer-events: none;
 }
