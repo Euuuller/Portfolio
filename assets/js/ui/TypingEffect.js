@@ -5,7 +5,8 @@
 
 const roles = [
   'Analista de Dados',
-  'Data Analyst'
+  'Data Analyst',
+  'Eng. Elétrica'
 ];
 
 export const initTypingEffect = () => {

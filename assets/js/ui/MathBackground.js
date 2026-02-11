@@ -60,7 +60,7 @@ const formulas = [
       top: '10%',
       right: '10%',
       transform: 'rotate(5deg)',
-      opacity: '0.5' // Mais visível
+      opacity: '0.9' // Mais visível
     }
   },
   // Centro Esquerda - Integral
@@ -72,7 +72,7 @@ const formulas = [
       top: '40%',
       left: '5%',
       transform: 'rotate(-15deg)',
-      opacity: '0.08' 
+      opacity: '0.3' 
     }
   },
   // Centro Direita - Somatório
@@ -84,7 +84,7 @@ const formulas = [
       top: '45%',
       right: '8%',
       transform: 'rotate(10deg)',
-      opacity: '0.08'
+      opacity: '0.3'
     }
   },
   // Canto Inferior Esquerdo - Derivada Parcial
@@ -96,7 +96,7 @@ const formulas = [
       bottom: '15%',
       left: '8%',
       transform: 'rotate(20deg)',
-      opacity: '0.1'
+      opacity: '0.3'
     }
   },
   // Canto Inferior Direito - Laplace
@@ -108,7 +108,7 @@ const formulas = [
       bottom: '20%',
       right: '12%',
       transform: 'rotate(-10deg)',
-      opacity: '0.09'
+      opacity: '0.3'
     }
   },
   // Topo Centro (Levemente à esquerda) - Derivada
@@ -120,7 +120,7 @@ const formulas = [
       top: '5%',
       left: '30%',
       transform: 'rotate(-5deg)',
-      opacity: '0.1'
+      opacity: '0.3'
     }
   },
   // Topo Centro (Levemente à direita) - Integral Fechada
@@ -132,7 +132,7 @@ const formulas = [
       top: '8%',
       right: '30%',
       transform: 'rotate(15deg)',
-      opacity: '0.08'
+      opacity: '0.3'
     }
   },
   // Fundo Centro (Espalhado) - Indutor
@@ -333,20 +333,34 @@ export const initMathBackground = () => {
     }
 
     /**
-     * LÓGICA DE COR E MIX-BLEND
-     * - Assinatura (Euler): Cor de destaque (soft blue), sem mistura complexa.
-     * - Outras: Cor do texto padrão, com opacidade muito baixa e mix-blend 'overlay'.
-     *   Isso faz com que as fórmulas pareçam "gravadas" ou parte da textura do fundo.
+     * LÓGICA DE COR ADAPTATIVA POR TEMA
+     * Detecta se está em dark ou light mode e aplica cores apropriadas
      */
-    if (data.isSignature) {
-      el.style.color = 'rgba(59, 130, 246, 0.2)'; // Azul com 20% de opacidade
-      el.style.mixBlendMode = 'normal';
+    
+    // Detecta o tema atual
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark' || 
+                       !document.documentElement.getAttribute('data-theme');
+    
+    // ✨ Cores adaptativas por tema
+    if (isDarkMode) {
+      // Dark Mode: Azul claro visível
+      el.style.color = 'rgba(74, 144, 226, 0.35)'; // Azul mais visível no escuro
     } else {
-      // Usa variável CSS do tema para reagir a Dark/Light mode
-      el.style.color = 'var(--color-text-primary)';
-      // Reduz opacidade no mobile para não brigar com o conteúdo principal
-      el.style.opacity = isMobile ? '0.05' : (data.style.opacity || '0.05');
-      el.style.mixBlendMode = isMobile ? 'normal' : 'overlay'; // Desativa blend mode pesado no mobile
+      // Light Mode: Azul escuro visível
+      el.style.color = 'rgba(37, 99, 235, 0.4)'; // Azul escuro visível no claro
+    }
+    
+    el.style.mixBlendMode = 'normal';
+    
+    // Destaque extra para a assinatura (Euler)
+    if (data.isSignature) {
+      el.style.fontWeight = '700'; // Mais negrito
+      // Euler ainda mais visível
+      if (isDarkMode) {
+        el.style.color = 'rgba(74, 144, 226, 0.5)';
+      } else {
+        el.style.color = 'rgba(37, 99, 235, 0.6)';
+      }
     }
 
     /**
@@ -369,4 +383,40 @@ export const initMathBackground = () => {
   
   // Finalmente, insere o wrapper no container principal da página
   container.appendChild(formulasWrapper);
+  
+  /**
+   * ✨ LISTENER DE MUDANÇA DE TEMA
+   * Atualiza as cores das fórmulas quando o usuário troca entre dark/light mode
+   */
+  const updateFormulasOnThemeChange = () => {
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark' || 
+                       !document.documentElement.getAttribute('data-theme');
+    
+    // Seleciona todas as fórmulas
+    const allFormulas = container.querySelectorAll('div[style*="position: absolute"]');
+    
+    allFormulas.forEach((formula, index) => {
+      const isSignature = formulas[index]?.isSignature;
+      
+      if (isDarkMode) {
+        formula.style.color = isSignature ? 'rgba(74, 144, 226, 0.5)' : 'rgba(74, 144, 226, 0.35)';
+      } else {
+        formula.style.color = isSignature ? 'rgba(37, 99, 235, 0.6)' : 'rgba(37, 99, 235, 0.4)';
+      }
+    });
+  };
+  
+  // Observa mudanças no atributo data-theme
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        updateFormulasOnThemeChange();
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
 };

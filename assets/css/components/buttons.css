@@ -154,6 +154,43 @@
 }
 
 /* ============================================
+   ICON BUTTONS (GitHub, CV)
+   ============================================ */
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* CV Button - Destaque sutil */
+.btn-cv-header {
+  color: var(--color-accent-primary);
+}
+
+.btn-cv-header:hover {
+  background: rgba(74, 144, 226, 0.1);
+  color: var(--color-accent-primary);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
