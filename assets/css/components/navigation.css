@@ -2,11 +2,11 @@
    NAVIGATION - Mobile Menu & Back to Top
    ============================================ */
 
-/* Mobile Toggle */
+/* Mobile Toggle - Touch Target 44px base */
 .mobile-toggle {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 44px; /* ✨ Base 44px */
+  height: 44px; /* ✨ Base 44px */
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);

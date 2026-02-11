@@ -386,7 +386,8 @@
 @media (max-width: 767px) {
   .typing-text {
     /* Promove para camada de composição na GPU */
-    will-change: background-position;
+    will-change: content; /* ✨ Otimização específica para texto mudando */
+    backface-visibility: hidden;
   }
   
   .scroll-indicator {

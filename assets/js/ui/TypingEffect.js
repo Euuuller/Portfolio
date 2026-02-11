@@ -23,11 +23,16 @@ export const initTypingEffect = () => {
     const currentRole = roles[currentRoleIndex];
 
     if (isDeleting) {
-      typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
+      // ✨ Otimização: Agrupa leituras e escritas do DOM
+      requestAnimationFrame(() => {
+        typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
+      });
       currentCharIndex--;
       typingSpeed = 50;
     } else {
-      typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
+      requestAnimationFrame(() => {
+        typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
+      });
       currentCharIndex++;
       typingSpeed = 100;
     }

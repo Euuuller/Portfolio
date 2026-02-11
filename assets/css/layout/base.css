@@ -58,10 +58,13 @@ textarea {
   min-height: 120px;
 }
 
-/* Section Base */
+/* Section Base - Optimized Containment */
 .section {
   padding: var(--space-32) 0;
   position: relative;
+  /* ✨ CSS Containment: Isola layout, estilo e paint */
+  /* O navegador não precisa recalcular o resto da página se algo mudar aqui dentro */
+  contain: content; 
 }
 
 /* Section Title */

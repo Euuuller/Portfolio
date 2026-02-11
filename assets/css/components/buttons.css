@@ -119,10 +119,10 @@
   padding: var(--space-4) var(--space-6);
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button - Touch Target 44px */
 .theme-toggle {
-  width: 40px;
-  height: 40px;
+  width: 44px; /* ✨ Aumentado para 44px */
+  height: 44px; /* ✨ Aumentado para 44px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,8 +137,8 @@
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 22px; /* ✨ Ícone levemente maior para proporção */
+  height: 22px;
 }
 
 .icon-sun {
@@ -154,12 +154,12 @@
 }
 
 /* ============================================
-   ICON BUTTONS (GitHub, CV)
+   ICON BUTTONS (GitHub, CV) - Touch Target 44px
    ============================================ */
 
 .btn-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px; /* ✨ Aumentado para 44px */
+  height: 44px; /* ✨ Aumentado para 44px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,8 +176,8 @@
 }
 
 .btn-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 22px; /* ✨ Proporcional */
+  height: 22px;
 }
 
 /* CV Button - Destaque sutil */
