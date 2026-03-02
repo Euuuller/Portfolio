@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative h-[100dvh] flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center">
-        
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 shadow-sm mb-8">
           <span className="relative flex h-2.5 w-2.5">
@@ -50,21 +50,21 @@ export default function Hero() {
             <span className="animate-pulse text-blue-500">_</span>
           </p>
         </div>
-        
+
         <p className="text-slate-500 dark:text-slate-400 max-w-lg mb-10 text-sm md:text-base">
           Fique à vontade para explorar o <span className="text-blue-500 font-semibold">portfólio</span> e entrar em <span className="text-blue-500 font-semibold">contato</span> pelos links ao final da página.
         </p>
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <a 
-            href="#projetos" 
+          <a
+            href="#projetos"
             className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors duration-250 flex items-center justify-center gap-2"
           >
             Ver Projetos <i className="fa-solid fa-arrow-right"></i>
           </a>
-          <a 
-            href="#" 
+          <a
+            href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf"
             className="bg-transparent border-[1.5px] border-navy dark:border-slate-600 text-navy dark:text-white hover:bg-navy dark:hover:bg-slate-800 hover:text-white px-8 py-3.5 rounded-lg font-semibold transition-colors duration-250 flex items-center justify-center gap-2"
           >
             Baixar CV <i className="fa-solid fa-download"></i>

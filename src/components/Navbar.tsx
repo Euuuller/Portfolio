@@ -60,21 +60,19 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative text-sm font-semibold transition-colors py-1 hover:text-blue-500 dark:hover:text-white ${
-                  activeSection === link.href.substring(1)
+                className={`relative text-sm font-semibold transition-colors py-1 hover:text-blue-500 dark:hover:text-white ${activeSection === link.href.substring(1)
                     ? 'text-blue-500 dark:text-white'
                     : 'text-slate-500 dark:text-slate-400'
-                }`}
+                  }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 dark:bg-white rounded-full transition-transform duration-300 origin-left ${
-                  activeSection === link.href.substring(1) ? 'scale-x-100' : 'scale-x-0'
-                }`}></span>
+                <span className={`absolute -bottom-1 left-0 w-full h-[2px] bg-blue-500 dark:bg-white rounded-full transition-transform duration-300 origin-left ${activeSection === link.href.substring(1) ? 'scale-x-100' : 'scale-x-0'
+                  }`}></span>
               </a>
             ))}
           </div>
           <div className="flex items-center gap-3 border-l border-slate-200 dark:border-slate-800 pl-8">
-            <button 
+            <button
               onClick={toggleTheme}
               className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all"
               title={isDarkMode ? "Mudar para Modo Claro" : "Mudar para Modo Escuro"}
@@ -85,7 +83,7 @@ export default function Navbar() {
                 <Moon className="w-5 h-5 transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110" />
               )}
             </button>
-            <a href="#" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all" title="Baixar CV">
+            <a href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all" title="Baixar CV">
               <FileDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1 group-hover:scale-110" />
             </a>
             <a href="https://github.com/euller-ds" target="_blank" rel="noopener noreferrer" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all">
@@ -95,7 +93,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-colors group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -108,26 +106,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-[#050505]/95 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
-      }`}>
+      <div className={`md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-[#050505]/95 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+        }`}>
         <div className="flex flex-col gap-2 py-4 px-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-base py-3 px-4 rounded-xl transition-colors ${
-                activeSection === link.href.substring(1)
+              className={`text-base py-3 px-4 rounded-xl transition-colors ${activeSection === link.href.substring(1)
                   ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold'
                   : 'text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-800'
-              }`}
+                }`}
             >
               {link.name}
             </a>
           ))}
           <div className="flex items-center gap-4 pt-4 mt-2 border-t border-slate-100 dark:border-slate-800 px-4">
-            <button 
+            <button
               onClick={() => { toggleTheme(); setMobileMenuOpen(false); }}
               className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
@@ -138,7 +134,7 @@ export default function Navbar() {
               )}
               Tema
             </button>
-            <a href="#" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors ml-auto">
+            <a href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors ml-auto">
               <FileDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" /> Currículo
             </a>
             <a href="https://github.com/euller-ds" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white transition-colors ml-auto">

@@ -186,6 +186,15 @@ Você **não precisa tocar nos arquivos .tsx (React)** para atualizar seu portf�
 - Atualize os links das suas **redes sociais** e botão de e-mail na constante `SOCIAL_LINKS`.
 - Insira novas **habilidades** na constante `SKILLS`. Os carrosséis irão se auto-ajustar.
 
+### Gerenciando Arquivos Estáticos 📁
+
+Alguns arquivos não precisam de código para serem atualizados, apenas substituição direta na pasta `public/`:
+
+- **📄 Currículo (PDF):**
+  Para atualizar seu currículo disponível no site, basta salvar seu novo PDF com o nome exato de `curriculo.pdf` e colá-lo dentro da pasta `public/docs/`, substituindo o anterior. Os botões de **"Baixar CV"** do site baixarão essa nova versão automaticamente.
+- **🎬 GIF Animado de Preview:**
+  Para exibir aquele preview animado no GitHub, grave a tela do seu portfólio rodando, converta para formato `.gif` (ex: no Ezgif), renomeie o arquivo para `preview.gif` e coloque-o dentro de `public/assets/images/`.
+
 ### Modificando o Estilo e Layout
 
 - Para **cores, fontes globais ou extensões do Tailwind**, altere o arquivo `tailwind.config.js`.
