@@ -25,7 +25,7 @@ export default function Hero() {
   }, [currentRole, isDeleting, roleIndex]);
 
   return (
-    <section id="inicio" className="relative h-[100dvh] flex flex-col justify-center items-center overflow-hidden">
+    <section id="inicio" className="relative min-h-[85vh] md:h-[100dvh] flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center">
 
         {/* Badge */}

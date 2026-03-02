@@ -7,13 +7,13 @@ export default function Skills() {
   const track2 = SKILLS.slice(half);
 
   return (
-    <section id="habilidades" className="min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] overflow-hidden">
+    <section id="habilidades" className="md:min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
-        <SectionHeader 
-          title="Habilidades Técnicas" 
-          subtitle="Stack tecnológica otimizada para análise de dados, machine learning e visualização." 
+        <SectionHeader
+          title="Habilidades Técnicas"
+          subtitle="Stack tecnológica otimizada para análise de dados, machine learning e visualização."
         />
-        
+
         <div className="flex flex-col gap-16 mt-10 mask-fade">
           {/* Track 1 - Scrolls Left */}
           <div className="flex gap-24 w-max animate-scroll-left">
@@ -21,7 +21,7 @@ export default function Skills() {
               <SkillCard key={`t1-${i}`} skill={skill} />
             ))}
           </div>
-          
+
           {/* Track 2 - Scrolls Right */}
           <div className="flex gap-24 w-max animate-scroll-right">
             {[...track2, ...track2, ...track2, ...track2].map((skill, i) => (

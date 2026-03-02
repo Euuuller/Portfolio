@@ -60,7 +60,7 @@ export default function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projetos" className="min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] relative">
+    <section id="projetos" className="md:min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] relative">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Projetos em Destaque"
