@@ -34,7 +34,7 @@ const getMetricIcon = (metric: string) => {
   if (m.includes('dax')) return 'fa-solid fa-calculator';
   if (m.includes('precisão') || m.includes('f1-score')) return 'fa-solid fa-bullseye';
   if (m.includes('falso')) return 'fa-solid fa-shield-halved';
-  
+
   return 'fa-solid fa-chart-simple';
 };
 
@@ -47,11 +47,11 @@ export default function Projects() {
     } else {
       document.body.style.overflow = '';
     }
-    
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSelectedProject(null);
     };
-    
+
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = '';
@@ -62,23 +62,23 @@ export default function Projects() {
   return (
     <section id="projetos" className="min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] relative">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
-        <SectionHeader 
-          title="Projetos em Destaque" 
-          subtitle="Casos reais de análise de dados, dashboards interativos e modelos preditivos." 
+        <SectionHeader
+          title="Projetos em Destaque"
+          subtitle="Casos reais de análise de dados, dashboards interativos e modelos preditivos."
         />
-        
+
         {/* Mobile Swipe Indicator */}
         <div className="flex md:hidden items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-[11px] uppercase tracking-widest font-semibold mb-6 -mt-8">
           <i className="fa-solid fa-arrow-left-long opacity-50"></i>
           <span>Deslize para ver mais</span>
           <i className="fa-solid fa-arrow-right-long opacity-50"></i>
         </div>
-        
-        <div className="flex overflow-x-auto pb-8 -mx-6 px-6 snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0 md:snap-none items-stretch">
+
+        <div className="flex overflow-x-auto pb-8 -mx-6 px-6 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0 items-stretch">
           {PROJECTS.map(project => (
-            <div 
-              key={project.id} 
-              className="min-w-[85vw] sm:min-w-[320px] snap-center mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer group"
+            <div
+              key={project.id}
+              className="min-w-[85vw] sm:min-w-[320px] mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer group"
               onClick={() => setSelectedProject(project)}
             >
               <div className="relative h-[200px] overflow-hidden">
@@ -97,7 +97,7 @@ export default function Projects() {
               <div className="p-[28px] flex flex-col flex-1 items-center text-center">
                 <h3 className="text-base font-bold text-navy dark:text-white mb-2">{project.title}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-3 leading-relaxed">{project.shortDesc}</p>
-                
+
                 <div className="flex flex-wrap justify-center gap-2 mb-6">
                   {project.tags.map(tag => (
                     <span key={tag} className={`text-[11px] font-bold px-2.5 py-1 rounded-md border ${getTagColor(tag)}`}>
@@ -105,7 +105,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-center items-center w-full">
                   <div className="flex justify-center gap-3">
                     {project.metrics.map((m, i) => (
@@ -122,14 +122,14 @@ export default function Projects() {
       </div>
 
       {/* Modal Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${selectedProject ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setSelectedProject(null)}
         aria-hidden={!selectedProject}
       >
         {/* Modal Content */}
         {selectedProject && (
-          <div 
+          <div
             className="bg-white dark:bg-[#0a0a0a] w-[90%] max-w-[900px] max-h-[90vh] overflow-y-auto rounded-[20px] p-6 md:p-8 transform transition-transform duration-300 scale-100 relative"
             onClick={e => e.stopPropagation()}
             role="dialog"
@@ -159,7 +159,7 @@ export default function Projects() {
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{selectedProject.modal.desafio}</p>
                   </div>
-                  
+
                   {/* Solução */}
                   <div className="bg-slate-50 dark:bg-[#111111] p-5 rounded-xl border-l-4 border-l-blue-500 border-y border-r border-slate-100 dark:border-slate-800">
                     <div className="flex items-center gap-2 mb-2">
@@ -168,7 +168,7 @@ export default function Projects() {
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{selectedProject.modal.solucao}</p>
                   </div>
-                  
+
                   {/* Impacto */}
                   <div className="bg-slate-50 dark:bg-[#111111] p-5 rounded-xl border-l-4 border-l-emerald-500 border-y border-r border-slate-100 dark:border-slate-800">
                     <div className="flex items-center gap-2 mb-2">
