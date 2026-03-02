@@ -27,7 +27,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Entre em Contato"
-          subtitle="Vamos conversar sobre como posso ajudar a sua empresa a tomar decisões baseadas em dados."
+          subtitle="Estou disponível para novas oportunidades e colaborações."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-[60px] items-start">

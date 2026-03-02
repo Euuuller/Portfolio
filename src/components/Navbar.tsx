@@ -86,7 +86,7 @@ export default function Navbar() {
             <a href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all" title="Baixar CV">
               <FileDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1 group-hover:scale-110" />
             </a>
-            <a href="https://github.com/euller-ds" target="_blank" rel="noopener noreferrer" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all">
+            <a href="https://github.com/Euuuller" target="_blank" rel="noopener noreferrer" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all">
               <Github className="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
             </a>
           </div>

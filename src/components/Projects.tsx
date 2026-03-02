@@ -64,7 +64,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Projetos em Destaque"
-          subtitle="Casos reais de análise de dados, dashboards interativos e modelos preditivos."
+          subtitle="Projetos de Análise de dados, dashboards interativos e modelos preditivos."
         />
 
         {/* Mobile Swipe Indicator */}

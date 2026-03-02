@@ -6,7 +6,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Sobre Mim"
-          subtitle="Conheça minha trajetória, formação e o que me motiva a transformar dados em soluções."
+          subtitle="Conheça a minha trajetória, formação e o que me motiva a estudar análise de dados."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-[60px] items-start">
@@ -21,7 +21,7 @@ export default function About() {
             </div>
             {/* GitHub Badge */}
             <a
-              href="https://github.com/euller-ds"
+              href="https://github.com/Euuuller"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute bottom-4 right-4 z-20 w-14 h-14 bg-navy dark:bg-slate-800 rounded-full flex items-center justify-center text-white shadow-md hover:scale-110 transition-transform"
