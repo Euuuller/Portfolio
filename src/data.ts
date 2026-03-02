@@ -82,8 +82,8 @@ export const SKILLS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { name: 'Email', value: 'euller.santos.duarte@gmail.com', icon: 'fa-solid fa-envelope', url: 'mailto:euller.santos.duarte@gmail.com', bg: 'bg-red-50', color: 'text-red-500' },
-  { name: 'LinkedIn', value: 'Faça uma conexão comigo', icon: 'fa-brands fa-linkedin-in', url: 'https://linkedin.com/in/euller-duarte', bg: 'bg-blue-50', color: 'text-[#0077B5]' },
-  { name: 'GitHub', value: 'Veja meus projetos', icon: 'fa-brands fa-github', url: 'https://github.com/euller-ds', bg: 'bg-slate-100', color: 'text-slate-900' },
-  { name: 'Medium', value: 'Leia meus artigos', icon: 'fa-brands fa-medium', url: '#', bg: 'bg-slate-100', color: 'text-[#00AB6C]' }
+  { name: 'Email', value: 'euller.santos.duarte@gmail.com', icon: 'fa-solid fa-envelope', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=euller.santos.duarte@gmail.com', bg: 'bg-red-50', color: 'text-red-500' },
+  { name: 'LinkedIn', value: 'Faça uma conexão comigo', icon: 'fa-brands fa-linkedin-in', url: 'https://www.linkedin.com/in/euuuller/', bg: 'bg-blue-50', color: 'text-[#0077B5]' },
+  { name: 'GitHub', value: 'Veja meus projetos', icon: 'fa-brands fa-github', url: 'https://github.com/Euuuller', bg: 'bg-slate-100', color: 'text-slate-900' },
+  { name: 'Medium', value: 'Leia meus artigos', icon: 'fa-brands fa-medium', url: 'https://medium.com/@euller.santos.duarte', bg: 'bg-slate-100', color: 'text-[#00AB6C]' }
 ];
