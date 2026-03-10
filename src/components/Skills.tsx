@@ -7,7 +7,7 @@ export default function Skills() {
   const track2 = SKILLS.slice(half);
 
   return (
-    <section id="habilidades" className="md:min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] overflow-hidden">
+    <section id="habilidades" className="md:min-h-dvh flex flex-col pt-[120px] pb-[80px] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Habilidades Técnicas"
@@ -38,7 +38,7 @@ function SkillCard({ skill }: any) {
   return (
     <div className="flex flex-col items-center justify-center w-[160px] gap-3 group pt-2">
       <div className="w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-2">
-        <img src={skill.iconUrl} alt={skill.name} className="w-full h-full object-contain drop-shadow-sm" />
+        <img src={skill.iconUrl} alt={skill.name} className="w-full h-full object-contain drop-shadow-sm" loading="lazy" decoding="async" />
       </div>
       <div className="flex flex-col items-center text-center">
         <h4 className="font-bold text-navy dark:text-white text-[15px]">{skill.name}</h4>

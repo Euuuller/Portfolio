@@ -67,10 +67,12 @@
 
 .animate-scroll-left {
   animation: scrollLeft 35s linear infinite;
+  will-change: transform;
 }
 
 .animate-scroll-right {
   animation: scrollRight 35s linear infinite;
+  will-change: transform;
 }
 
 /* Custom Scrollbar */

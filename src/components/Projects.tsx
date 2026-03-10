@@ -60,7 +60,7 @@ export default function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projetos" className="md:min-h-[100dvh] flex flex-col pt-[120px] pb-[80px] relative">
+    <section id="projetos" className="md:min-h-dvh flex flex-col pt-[120px] pb-[80px] relative">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Projetos em Destaque"
@@ -82,7 +82,7 @@ export default function Projects() {
               onClick={() => setSelectedProject(project)}
             >
               <div className="relative h-[200px] overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-navy/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                   <span className="bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-semibold py-2 px-4 rounded-lg backdrop-blur-md transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                     Ver Detalhes do Projeto
@@ -123,7 +123,7 @@ export default function Projects() {
 
       {/* Modal Overlay */}
       <div
-        className={`fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${selectedProject ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-9999 bg-black/60 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${selectedProject ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setSelectedProject(null)}
         aria-hidden={!selectedProject}
       >
@@ -194,7 +194,7 @@ export default function Projects() {
 
                 {/* Stack */}
                 <div>
-                  <h4 className="font-bold text-navy dark:text-white mb-3 uppercase text-[11px] tracking-wider text-slate-500 dark:text-slate-400">Stack</h4>
+                  <h4 className="font-bold mb-3 uppercase text-[11px] tracking-wider text-slate-500 dark:text-slate-400">Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.modal.stack.map((s: string, i: number) => (
                       <span key={i} className={`text-[11px] font-bold px-2.5 py-1 rounded-md border ${getTagColor(s)}`}>
@@ -206,7 +206,7 @@ export default function Projects() {
 
                 {/* Métricas */}
                 <div>
-                  <h4 className="font-bold text-navy dark:text-white mb-3 uppercase text-[11px] tracking-wider text-slate-500 dark:text-slate-400">Métricas</h4>
+                  <h4 className="font-bold mb-3 uppercase text-[11px] tracking-wider text-slate-500 dark:text-slate-400">Métricas</h4>
                   <ul className="space-y-3">
                     {selectedProject.modal.metricas.map((m: string, i: number) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">

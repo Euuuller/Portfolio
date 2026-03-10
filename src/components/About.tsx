@@ -2,7 +2,7 @@ import SectionHeader from './SectionHeader';
 
 export default function About() {
   return (
-    <section id="sobre" className="md:min-h-[100dvh] flex flex-col pt-[120px] pb-[80px]">
+    <section id="sobre" className="md:min-h-dvh flex flex-col pt-[120px] pb-[80px]">
       <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Sobre Mim"
@@ -17,6 +17,7 @@ export default function About() {
                 src="/profile.jpeg"
                 alt="Euller Duarte"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             {/* GitHub Badge */}
@@ -46,7 +47,7 @@ export default function About() {
               <div className="flex flex-col items-center gap-1 sm:gap-2 text-center px-1">
                 <i className="fa-solid fa-folder-open text-blue-500 dark:text-blue-400 text-base sm:text-xl"></i>
                 <span className="text-[9px] sm:text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Projetos</span>
-                <span className="text-[11px] sm:text-[15px] font-semibold text-navy dark:text-white leading-tight">15+ Públicos</span>
+                <span className="text-[11px] sm:text-[15px] font-semibold text-navy dark:text-white leading-tight">2+ Públicos</span>
               </div>
 
               <div className="flex flex-col items-center gap-1 sm:gap-2 text-center border-l border-slate-200 dark:border-slate-800 px-1 sm:pl-6">

@@ -25,7 +25,7 @@ export default function Hero() {
   }, [currentRole, isDeleting, roleIndex]);
 
   return (
-    <section id="inicio" className="relative min-h-[85vh] md:h-[100dvh] flex flex-col justify-center items-center overflow-hidden">
+    <section id="inicio" className="relative min-h-[85vh] md:h-dvh flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center z-10 flex flex-col items-center">
 
         {/* Badge */}
@@ -39,7 +39,7 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="text-[2.5rem] md:text-[4.5rem] font-extrabold text-navy dark:text-white leading-tight tracking-tight mb-4">
-          Euller <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Duarte</span>
+          Euller <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-purple-500">Duarte</span>
         </h1>
 
         {/* Typewriter Subtitle */}
