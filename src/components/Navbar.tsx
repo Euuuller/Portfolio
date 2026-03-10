@@ -8,15 +8,30 @@ export default function Navbar() {
 
   useEffect(() => {
     // Check initial theme preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
+    setIsDarkMode((prev) => {
+      const newTheme = !prev;
+      if (newTheme) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      return newTheme;
+    });
   };
 
   useEffect(() => {
@@ -74,14 +89,11 @@ export default function Navbar() {
           <div className="flex items-center gap-3 border-l border-slate-200 dark:border-slate-800 pl-8">
             <button
               onClick={toggleTheme}
-              className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all"
+              className="group relative w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-colors"
               title={isDarkMode ? "Mudar para Modo Claro" : "Mudar para Modo Escuro"}
             >
-              {isDarkMode ? (
-                <Sun className="w-5 h-5 transition-transform duration-500 group-hover:rotate-90 group-hover:scale-110" />
-              ) : (
-                <Moon className="w-5 h-5 transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110" />
-              )}
+              <Sun className={`absolute w-5 h-5 transition-all duration-500 ${isDarkMode ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90 group-hover:scale-110' : 'opacity-0 rotate-90 scale-0'}`} />
+              <Moon className={`absolute w-5 h-5 transition-all duration-500 ${!isDarkMode ? 'opacity-100 rotate-0 scale-100 group-hover:-rotate-12 group-hover:scale-110' : 'opacity-0 -rotate-90 scale-0'}`} />
             </button>
             <a href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf" className="group w-9 h-9 rounded-full flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:text-blue-300 transition-all" title="Baixar CV">
               <FileDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1 group-hover:scale-110" />
@@ -127,17 +139,16 @@ export default function Navbar() {
               onClick={() => { toggleTheme(); setMobileMenuOpen(false); }}
               className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
-              {isDarkMode ? (
-                <Sun className="w-4 h-4 transition-transform duration-500 group-hover:rotate-90" />
-              ) : (
-                <Moon className="w-4 h-4 transition-transform duration-500 group-hover:-rotate-12" />
-              )}
+              <div className="relative flex items-center justify-center w-4 h-4">
+                <Sun className={`absolute w-4 h-4 transition-all duration-500 ${isDarkMode ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 rotate-90 scale-0'}`} />
+                <Moon className={`absolute w-4 h-4 transition-all duration-500 ${!isDarkMode ? 'opacity-100 rotate-0 scale-100 group-hover:-rotate-12' : 'opacity-0 -rotate-90 scale-0'}`} />
+              </div>
               Tema
             </button>
             <a href="/docs/curriculo.pdf" download="Curriculo-Euller-Duarte.pdf" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors ml-auto">
               <FileDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" /> Currículo
             </a>
-            <a href="https://github.com/euller-ds" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white transition-colors ml-auto">
+            <a href="https://github.com/Euuuller" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white transition-colors ml-auto">
               <Github className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" /> GitHub
             </a>
           </div>
