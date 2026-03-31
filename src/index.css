@@ -16,6 +16,31 @@
 }
 
 @layer utilities {
+  /* Dot grid — applied globally via App wrapper */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(100,116,139,0.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .dark .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Roles gradient — blue/purple/cyan palette */
+  .bg-roles-gradient {
+    background-image: linear-gradient(
+      to right,
+      #3b82f6,
+      #818cf8,
+      #a855f7,
+      #6366f1,
+      #06b6d4,
+      #3b82f6,
+      #818cf8,
+      #a855f7
+    );
+  }
+
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -73,6 +98,20 @@
 .animate-scroll-right {
   animation: scrollRight 35s linear infinite;
   will-change: transform;
+}
+
+/* Respeita preferência por movimento reduzido — performance e acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient,
+  .animate-scroll-left,
+  .animate-scroll-right {
+    animation-play-state: paused;
+  }
+  .animate-ping,
+  .animate-bounce,
+  .animate-pulse {
+    animation: none;
+  }
 }
 
 /* Custom Scrollbar */
