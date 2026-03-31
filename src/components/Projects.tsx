@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import SectionHeader from './SectionHeader';
 import { PROJECTS } from '../data';
 
@@ -39,7 +39,7 @@ const getMetricIcon = (metric: string) => {
 };
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
 
   useEffect(() => {
     if (selectedProject) {
@@ -61,7 +61,7 @@ export default function Projects() {
 
   return (
     <section id="projetos" className="relative md:min-h-dvh flex flex-col pt-[120px] pb-[80px] overflow-hidden">
-<div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
+      <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Projetos em Destaque"
           subtitle="Projetos de Análise de dados, dashboards interativos e modelos preditivos."

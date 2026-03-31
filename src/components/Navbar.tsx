@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, Home, User, Code2, Briefcase, Mail } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 const NAV_LINKS = [
   { name: 'Início',      href: '#inicio',      icon: Home },
@@ -12,24 +13,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-    const dark = saved === 'dark' || (!saved && prefersDark);
-    setIsDarkMode(dark);
-    document.documentElement.classList.toggle('dark', dark);
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => {
-      const next = !prev;
-      document.documentElement.classList.toggle('dark', next);
-      localStorage.setItem('theme', next ? 'dark' : 'light');
-      return next;
-    });
-  };
+  const { isDark: isDarkMode, toggle: toggleTheme } = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(

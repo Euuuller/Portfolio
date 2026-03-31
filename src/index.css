@@ -11,8 +11,13 @@
 
 @layer base {
   body {
-    @apply bg-bg-main dark:bg-[#050505] text-slate-900 dark:text-slate-100 transition-colors duration-300;
+    @apply bg-bg-main dark:bg-[#050505] text-slate-900 dark:text-slate-100;
   }
+}
+
+/* Desabilita TODAS as transições durante o switch de tema — elimina o jank */
+.theme-switching * {
+  transition: none !important;
 }
 
 @layer utilities {
@@ -26,18 +31,18 @@
     background-size: 28px 28px;
   }
 
-  /* Roles gradient — blue/purple/cyan palette */
+  /* Roles gradient — blue/cyan/teal palette */
   .bg-roles-gradient {
     background-image: linear-gradient(
       to right,
-      #3b82f6,
-      #818cf8,
-      #a855f7,
-      #6366f1,
+      #2563eb,
+      #0ea5e9,
       #06b6d4,
-      #3b82f6,
-      #818cf8,
-      #a855f7
+      #14b8a6,
+      #0284c7,
+      #2563eb,
+      #0ea5e9,
+      #06b6d4
     );
   }
 
@@ -59,19 +64,6 @@
     animation: textGradient 4s linear infinite;
   }
   
-  .bg-rainbow {
-    background-image: linear-gradient(
-      to right,
-      #3b82f6,
-      #a855f7,
-      #ec4899,
-      #f97316,
-      #facc15,
-      #22c55e,
-      #06b6d4,
-      #3b82f6
-    );
-  }
 }
 
 @keyframes textGradient {
