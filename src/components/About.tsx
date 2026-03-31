@@ -3,10 +3,7 @@ import SectionHeader from './SectionHeader';
 export default function About() {
   return (
     <section id="sobre" className="relative md:min-h-dvh flex flex-col pt-[120px] pb-[80px] overflow-hidden">
-      {/* Glow */}
-      <div className="absolute -top-10 -right-10 w-56 h-56 md:w-96 md:h-96 bg-purple-500/5 dark:bg-purple-500/8 rounded-full blur-2xl md:blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 -left-10 w-52 h-52 md:w-80 md:h-80 bg-blue-500/5 dark:bg-blue-500/8 rounded-full blur-2xl md:blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
+<div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Sobre Mim"
           subtitle="Conheça a minha trajetória, formação e o que me motiva a estudar análise de dados."

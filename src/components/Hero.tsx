@@ -32,10 +32,7 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-[85vh] md:h-dvh flex flex-col justify-center items-center overflow-hidden">
 
-      {/* Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-44 md:w-[600px] md:h-[400px] bg-blue-500/6 dark:bg-blue-500/10 rounded-full blur-2xl md:blur-3xl pointer-events-none" />
-
-      <div className="max-w-3xl mx-auto px-6 text-center z-10 flex flex-col items-center">
+<div className="max-w-3xl mx-auto px-6 text-center z-10 flex flex-col items-center">
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm mb-8">

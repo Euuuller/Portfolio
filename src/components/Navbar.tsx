@@ -48,7 +48,7 @@ export default function Navbar() {
     <div className="fixed top-5 left-1/2 -translate-x-1/2 z-1000 w-[calc(100%-2rem)] max-w-3xl">
 
       {/* ── Pill principal ── */}
-      <nav className="bg-white/90 dark:bg-[#111]/90 backdrop-blur-xl border border-slate-200/70 dark:border-slate-700/40 rounded-2xl shadow-lg shadow-slate-300/30 dark:shadow-black/50 px-4 py-2.5 flex items-center justify-between">
+      <nav className="bg-white dark:bg-[#111] md:bg-white/90 md:dark:bg-[#111]/90 md:backdrop-blur-xl border border-slate-200/70 dark:border-slate-700/40 rounded-2xl shadow-lg shadow-slate-300/30 dark:shadow-black/50 px-4 py-2.5 flex items-center justify-between">
 
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2.5 shrink-0 group">
@@ -74,7 +74,7 @@ export default function Navbar() {
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-white/5'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 transition-colors ${isActive ? 'text-blue-500 dark:text-blue-400' : ''}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-blue-500 dark:text-blue-400' : ''}`} />
                 {name}
               </a>
             );
@@ -109,6 +109,7 @@ export default function Navbar() {
             className="md:hidden w-8 h-8 rounded-xl flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors duration-200"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen
               ? <X className="w-4 h-4" />
@@ -118,10 +119,12 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── Dropdown mobile ── */}
+      {/* ── Dropdown mobile — opacity+transform, sem max-h (zero layout recalc) ── */}
       <div
-        className={`md:hidden mt-2 bg-white/95 dark:bg-[#111]/95 backdrop-blur-xl border border-slate-200/70 dark:border-slate-700/40 rounded-2xl shadow-lg shadow-slate-300/30 dark:shadow-black/50 overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        className={`md:hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-[#111] border border-slate-200/70 dark:border-slate-700/40 rounded-2xl shadow-lg shadow-slate-300/30 dark:shadow-black/50 transition-[opacity,transform] duration-200 ease-out ${
+          mobileMenuOpen
+            ? 'opacity-100 translate-y-0 visible'
+            : 'opacity-0 -translate-y-2 invisible pointer-events-none'
         }`}
       >
         <div className="flex flex-col p-3 gap-1">
@@ -132,7 +135,7 @@ export default function Navbar() {
                 key={name}
                 href={href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-150 ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10'
                     : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'

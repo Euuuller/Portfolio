@@ -8,9 +8,7 @@ export default function Skills() {
 
   return (
     <section id="habilidades" className="relative md:min-h-dvh flex flex-col pt-[120px] pb-[80px] overflow-hidden">
-      {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-40 md:w-[550px] md:h-[300px] bg-indigo-500/5 dark:bg-indigo-500/8 rounded-full blur-2xl md:blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
+<div className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col">
         <SectionHeader
           title="Habilidades Técnicas"
           subtitle="Stack tecnológica otimizada para análise de dados, machine learning e visualização."
