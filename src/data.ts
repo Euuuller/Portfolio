@@ -62,7 +62,7 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  { name: 'SQL Server', phrase: 'Banco Corporativo', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg' },
+  { name: 'SQL Server', phrase: 'Banco Corporativo', iconUrl: '/icons/SQL Server.svg' },
   { name: 'MySQL', phrase: 'Banco Relacional', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
   { name: 'PostgreSQL', phrase: 'Queries Avançadas', iconUrl: '/icons/postgresql.svg' },
   { name: 'SQLite', phrase: 'Banco Leve', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg' },

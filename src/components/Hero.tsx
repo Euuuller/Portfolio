@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-const ROLES = ['Data Analyst', 'Analista de Dados', 'Eng. Elétrica'];
+const ROLES = ["Data Analyst", "Analista de Dados", "Eng. Elétrica"];
 
 export default function Hero() {
-  const [currentRole, setCurrentRole] = useState('');
+  const [currentRole, setCurrentRole] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const pauseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -15,11 +15,16 @@ export default function Hero() {
     const timer = setTimeout(() => {
       if (!isDeleting && currentRole === currentFullRole) {
         pauseTimer.current = setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && currentRole === '') {
+      } else if (isDeleting && currentRole === "") {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % ROLES.length);
       } else {
-        setCurrentRole(currentFullRole.substring(0, currentRole.length + (isDeleting ? -1 : 1)));
+        setCurrentRole(
+          currentFullRole.substring(
+            0,
+            currentRole.length + (isDeleting ? -1 : 1),
+          ),
+        );
       }
     }, typeSpeed);
 
@@ -30,10 +35,11 @@ export default function Hero() {
   }, [currentRole, isDeleting, roleIndex]);
 
   return (
-    <section id="inicio" className="relative min-h-[85vh] md:h-dvh flex flex-col justify-center items-center overflow-hidden">
-
-<div className="max-w-3xl mx-auto px-6 text-center z-10 flex flex-col items-center">
-
+    <section
+      id="inicio"
+      className="relative min-h-[85vh] md:h-dvh flex flex-col justify-center items-center overflow-hidden"
+    >
+      <div className="max-w-3xl mx-auto px-6 text-center z-10 flex flex-col items-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm mb-8">
           <span className="relative flex h-2 w-2">
@@ -47,12 +53,12 @@ export default function Hero() {
 
         {/* Intro */}
         <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg font-medium mb-2 tracking-wide">
-          Olá, meu nome é
+          Olá, Seja muito Bem Vindo!
         </p>
 
         {/* Title */}
         <h1 className="text-[3rem] md:text-[5.5rem] font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-6">
-          Euller{' '}
+          Euller{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
             Duarte
           </span>
@@ -62,21 +68,33 @@ export default function Hero() {
         <div className="h-14 flex items-center justify-center mb-6">
           <p className="text-2xl md:text-4xl font-bold font-mono">
             <span className="text-orange-400 mr-2 not-italic">✦</span>
-            <span className="text-transparent bg-clip-text bg-roles-gradient animate-gradient">{currentRole}</span>
-            <span className="animate-pulse text-blue-500 dark:text-blue-400">|</span>
+            <span className="text-transparent bg-clip-text bg-roles-gradient animate-gradient">
+              {currentRole}
+            </span>
+            <span className="animate-pulse text-blue-500 dark:text-blue-400">
+              |
+            </span>
           </p>
         </div>
 
         {/* Description */}
         <p className="text-slate-500 dark:text-slate-400 max-w-lg mb-10 text-sm md:text-base leading-relaxed">
-          Transformo dados complexos em decisões estratégicas. Explore meu{' '}
-          <a href="#projetos" className="text-slate-800 dark:text-white font-bold hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+          Transformo dados em análises que ajudam a tomar decisões melhores.
+          Explore meu{" "}
+          <a
+            href="#projetos"
+            className="text-slate-800 dark:text-white font-bold hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+          >
             portfólio
-          </a>{' '}
-          e sinta-se à vontade para entrar em{' '}
-          <a href="#contato" className="text-slate-800 dark:text-white font-bold hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+          </a>{" "}
+          e sinta-se à vontade para entrar em{" "}
+          <a
+            href="#contato"
+            className="text-slate-800 dark:text-white font-bold hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+          >
             contato
-          </a>.
+          </a>
+          .
         </p>
 
         {/* Buttons */}
@@ -85,14 +103,16 @@ export default function Hero() {
             href="#projetos"
             className="bg-white dark:bg-white text-slate-900 hover:bg-slate-100 dark:hover:bg-slate-200 px-5 py-2.5 sm:px-8 sm:py-3.5 text-sm sm:text-base rounded-full font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-sm border border-slate-200/80 dark:border-transparent"
           >
-            Ver Projetos <i className="fa-solid fa-arrow-right text-xs sm:text-sm"></i>
+            Ver Projetos{" "}
+            <i className="fa-solid fa-arrow-right text-xs sm:text-sm"></i>
           </a>
           <a
             href="/docs/curriculo.pdf"
             download="Curriculo-Euller-Duarte.pdf"
             className="bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white px-5 py-2.5 sm:px-8 sm:py-3.5 text-sm sm:text-base rounded-full font-semibold transition-all duration-200 flex items-center justify-center gap-2 border border-slate-800 dark:border-slate-700"
           >
-            Baixar CV <i className="fa-solid fa-download text-xs sm:text-sm"></i>
+            Baixar CV{" "}
+            <i className="fa-solid fa-download text-xs sm:text-sm"></i>
           </a>
         </div>
       </div>
