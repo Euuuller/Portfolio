@@ -59,7 +59,7 @@ export default function Hero() {
         {/* Title */}
         <h1 className="text-[3rem] md:text-[5.5rem] font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-6">
           Euller{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
             Duarte
           </span>
         </h1>

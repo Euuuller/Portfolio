@@ -35,14 +35,14 @@ export default function Navbar() {
       <nav className="bg-white dark:bg-[#111] md:bg-white/90 md:dark:bg-[#111]/90 md:backdrop-blur-xl border border-slate-200/70 dark:border-slate-700/40 rounded-2xl shadow-lg shadow-slate-300/30 dark:shadow-black/50 px-4 py-2.5 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2.5 shrink-0 group">
-          <span className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-[11px] font-extrabold tracking-tight select-none group-hover:bg-blue-700 transition-colors duration-200">
+        <div className="flex items-center gap-2.5 shrink-0">
+          <span className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-[11px] font-extrabold tracking-tight select-none">
             &lt;/&gt;
           </span>
           <span className="font-bold text-slate-900 dark:text-white text-sm tracking-tight">
-            Euller<span className="text-blue-600 dark:text-blue-400">.dev</span>
+            euuuller<span className="text-blue-600 dark:text-blue-400">.DS</span>
           </span>
-        </a>
+        </div>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-0.5">

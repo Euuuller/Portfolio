@@ -4,18 +4,20 @@ import { PROJECTS } from '../data';
 
 const getTagColor = (tag: string) => {
   const colors: Record<string, string> = {
-    'Python': 'bg-blue-50 dark:bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-200 dark:border-blue-500/20',
-    'Pandas': 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20',
-    'Power BI': 'bg-amber-50 dark:bg-amber-500/10 text-amber-500 dark:text-amber-400 border-amber-200 dark:border-amber-500/20',
-    'Scikit-Learn': 'bg-orange-50 dark:bg-orange-500/10 text-orange-500 dark:text-orange-400 border-orange-200 dark:border-orange-500/20',
-    'SQL': 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/20',
-    'Excel': 'bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 border-green-200 dark:border-green-500/20',
-    'Machine Learning': 'bg-purple-50 dark:bg-purple-500/10 text-purple-500 dark:text-purple-400 border-purple-200 dark:border-purple-500/20',
-    'Estatística': 'bg-rose-50 dark:bg-rose-500/10 text-rose-500 dark:text-rose-400 border-rose-200 dark:border-rose-500/20',
-    'DAX': 'bg-yellow-50 dark:bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-200 dark:border-yellow-500/20',
-    'ETL': 'bg-cyan-50 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-200 dark:border-cyan-500/20',
+    'python': 'bg-blue-50 dark:bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-200 dark:border-blue-500/20',
+    'pandas': 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20',
+    'power bi': 'bg-amber-50 dark:bg-amber-500/10 text-amber-500 dark:text-amber-400 border-amber-200 dark:border-amber-500/20',
+    'scikit-learn': 'bg-orange-50 dark:bg-orange-500/10 text-orange-500 dark:text-orange-400 border-orange-200 dark:border-orange-500/20',
+    'sql': 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/20',
+    'excel': 'bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 border-green-200 dark:border-green-500/20',
+    'machine learning': 'bg-purple-50 dark:bg-purple-500/10 text-purple-500 dark:text-purple-400 border-purple-200 dark:border-purple-500/20',
+    'estatística': 'bg-rose-50 dark:bg-rose-500/10 text-rose-500 dark:text-rose-400 border-rose-200 dark:border-rose-500/20',
+    'dax': 'bg-yellow-50 dark:bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-200 dark:border-yellow-500/20',
+    'etl': 'bg-cyan-50 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-200 dark:border-cyan-500/20',
+    'xgboost': 'bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-200 dark:border-teal-500/20',
+    'k-means': 'bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-200 dark:border-pink-500/20',
   };
-  return colors[tag] || 'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700';
+  return colors[tag.toLowerCase()] || 'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700';
 };
 
 const getMetricIconColor = (index: number) => {
@@ -78,15 +80,18 @@ export default function Projects() {
           {PROJECTS.map(project => (
             <div
               key={project.id}
-              className="min-w-[85vw] sm:min-w-[320px] mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer group"
-              onClick={() => setSelectedProject(project)}
+              className="min-w-[85vw] sm:min-w-[320px] mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group"
             >
               <div className="relative h-[200px] overflow-hidden">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-navy/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                  <span className="bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-semibold py-2 px-4 rounded-lg backdrop-blur-md transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-semibold py-2 px-4 rounded-lg backdrop-blur-md transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
+                  >
                     Ver Detalhes do Projeto
-                  </span>
+                  </button>
                 </div>
                 <div className="absolute top-4 left-4">
                   <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${project.badgeColor}`}>
