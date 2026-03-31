@@ -136,7 +136,7 @@ export default function Projects() {
         {/* Modal Content */}
         {selectedProject && (
           <div
-            className="bg-white dark:bg-[#0a0a0a] w-[90%] max-w-[900px] max-h-[90vh] overflow-y-auto rounded-[20px] p-6 md:p-8 transform transition-transform duration-300 scale-100 relative"
+            className="bg-white dark:bg-[#0a0a0a] w-[90%] max-w-[900px] max-h-[90vh] overflow-y-auto hide-scrollbar rounded-[20px] p-6 md:p-8 transform transition-transform duration-300 scale-100 relative"
             onClick={e => e.stopPropagation()}
             role="dialog"
           >
