@@ -131,14 +131,21 @@ export default function Navbar() {
             );
           })}
 
-          <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800">
+          <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800 flex gap-2">
             <a
               href="https://github.com/Euuuller"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors duration-200"
             >
               <i className="fa-brands fa-github text-sm"></i> GitHub
+            </a>
+            <a
+              href="/docs/curriculo.pdf"
+              download="Curriculo-Euller-Duarte.pdf"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white text-sm font-semibold transition-colors duration-200"
+            >
+              <i className="fa-solid fa-download text-sm"></i> Baixar CV
             </a>
           </div>
         </div>

@@ -80,15 +80,16 @@ export default function Projects() {
           {PROJECTS.map(project => (
             <div
               key={project.id}
-              className="min-w-[85vw] sm:min-w-[320px] mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group"
+              tabIndex={0}
+              className="min-w-[85vw] sm:min-w-[320px] mr-4 md:mr-0 md:min-w-0 bg-white dark:bg-[#0a0a0a] border border-slate-100 dark:border-slate-800 rounded-[16px] overflow-hidden shadow-sm hover:shadow-md focus:outline-none transition-all duration-300 flex flex-col group"
             >
               <div className="relative h-[200px] overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-navy/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                <div className="absolute inset-0 bg-navy/60 dark:bg-black/60 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-semibold py-2 px-4 rounded-lg backdrop-blur-md transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
+                    className="cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-semibold py-2 px-4 rounded-lg backdrop-blur-md transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 group-focus:translate-y-0"
                   >
                     Ver Detalhes do Projeto
                   </button>
